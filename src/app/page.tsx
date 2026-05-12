@@ -4,7 +4,9 @@ import {
   Fuel, Droplets, CloudRain, Package, Box, Truck, Hammer, Replace, Cylinder, Snowflake, Wrench, Settings, 
   UserCheck, CircleDollarSign, ShieldCheck, Zap, HardHat, MapPin, Phone, Mail, ArrowRight, ArrowDown
 } from "lucide-react";
-import LogoLoop from "@/components/LogoLoop";
+import LogoLoopBase from "@/components/LogoLoop";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const LogoLoop = LogoLoopBase as any;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
