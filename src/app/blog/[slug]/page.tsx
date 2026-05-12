@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Calendar, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ReadingProgress from "@/components/ReadingProgress";
@@ -156,7 +156,7 @@ export default function BlogDetail({ params }: Props) {
             {relatedPosts.map((rel) => (
               <Link
                 key={rel.slug}
-                href={\`/blog/\${rel.slug}\`}
+                href={`/blog/${rel.slug}`}
                 className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden border border-white/5 shadow-sleek hover:border-secondary-container/20 hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="h-48 relative overflow-hidden">
