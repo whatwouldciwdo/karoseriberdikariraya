@@ -19,7 +19,7 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 
   const SITE_URL = "https://www.berdikariraya.com";
-  const url = \`\${SITE_URL}/blog/\${post.slug}\`;
+  const url = `${SITE_URL}/blog/${post.slug}`;
 
   return {
     title: post.title,
