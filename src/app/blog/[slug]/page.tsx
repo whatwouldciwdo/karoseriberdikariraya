@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, ChevronRight } from "lucide-rea
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ReadingProgress from "@/components/ReadingProgress";
+import Image from "next/image";
 import { blogPosts } from "@/data/blog";
 
 type Props = {
@@ -97,11 +98,14 @@ export default function BlogDetail({ params }: Props) {
       <main className="px-6 md:px-margin-desktop pb-24">
         <div className="max-w-4xl mx-auto -mt-8 relative z-20">
           {/* Featured Image */}
-          <div className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-white/5 mb-16">
-            <img 
+          <div className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-white/5 mb-16 relative">
+            <Image 
               src={post.img} 
               alt={post.title} 
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover"
+              priority
             />
           </div>
 
@@ -160,10 +164,12 @@ export default function BlogDetail({ params }: Props) {
                 className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden border border-white/5 shadow-sleek hover:border-secondary-container/20 hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="h-48 relative overflow-hidden">
-                  <img
+                  <Image
                     src={rel.img}
                     alt={rel.title}
-                    className="w-full h-full object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="font-label-md text-xs px-3 py-1 bg-surface-container-high/80 text-secondary-container backdrop-blur-md rounded-full">

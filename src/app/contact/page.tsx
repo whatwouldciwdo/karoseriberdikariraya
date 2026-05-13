@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight, CheckCircle, Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const SITE_URL = "https://www.berdikariraya.com";
 
@@ -133,10 +134,13 @@ export default function ContactPage() {
 
       {/* Hero */}
       <div className="relative w-full min-h-[50vh] flex items-end overflow-hidden bg-surface">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80"
           alt="Hubungi Berdikari Raya Service - Konsultasi Karoseri Truck Gratis"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-30"
+          fill
+          sizes="100vw"
+          className="object-cover grayscale brightness-30"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
@@ -325,6 +329,7 @@ export default function ContactPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    title="Lokasi Workshop Berdikari Raya Service - Jalan Macem No. 27, Cikiwul, Bantar Gebang, Bekasi"
                     className="grayscale brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
                   />
                 </div>

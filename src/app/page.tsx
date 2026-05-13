@@ -9,6 +9,7 @@ import LogoLoopBase from "@/components/LogoLoop";
 const LogoLoop = LogoLoopBase as any;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const partnerLogos = [
   { src: "/logo/portfolio/alta_jaya_motor.jpg", alt: "Alta Jaya Motor" },
@@ -141,7 +142,11 @@ export default function Home() {
 
         {/* Scroll Indicator FAB */}
         <div className="absolute bottom-margin-desktop right-margin-desktop z-20">
-          <button className="w-16 h-16 bg-secondary-container rounded-full flex items-center justify-center shadow-sleek hover:scale-110 transition-transform active:scale-90">
+          <button
+            className="w-16 h-16 bg-secondary-container rounded-full flex items-center justify-center shadow-sleek hover:scale-110 transition-transform active:scale-90"
+            aria-label="Gulir ke bawah"
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+          >
             <ArrowDown className="text-white" size={32} />
           </button>
         </div>
@@ -152,10 +157,12 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Image/Collage Side */}
           <div className="h-[280px] sm:h-[380px] md:h-[580px] bg-surface-container-high rounded-2xl relative overflow-hidden group shadow-sleek border border-white/5">
-            <img
-              className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-              alt="Berdikari Raya Service Collage"
+            <Image
               src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80"
+              alt="Berdikari Raya Service Collage"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
           </div>
@@ -237,7 +244,13 @@ export default function Home() {
             {servicesList.map((service, idx) => (
               <div key={idx} className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-white/5 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300 cursor-pointer w-full">
                 <div className="h-48 md:h-56 relative overflow-hidden bg-surface-container w-full">
-                  <img src={service.img} alt={service.title} className="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                  <Image 
+                    src={service.img} 
+                    alt={service.title} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" 
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
                   <div className="absolute top-4 right-4 w-10 h-10 bg-secondary-container/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <service.icon className="text-white" size={20} />
@@ -389,6 +402,7 @@ export default function Home() {
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
+              title="Lokasi Workshop Berdikari Raya Service - Jalan Macem No. 27, Cikiwul, Bantar Gebang, Bekasi"
               className="grayscale brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
             ></iframe>
           </div>

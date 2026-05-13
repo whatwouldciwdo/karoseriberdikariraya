@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -11,7 +12,13 @@ export default function Footer() {
           {/* Profil */}
           <div className="flex flex-col space-y-6">
             <div className="flex items-center gap-4">
-              <img src="/logo/berdikariraya.png" alt="Berdikari Raya Logo" className="h-12 object-contain" />
+              <Image 
+                src="/logo/berdikariraya.png" 
+                alt="Berdikari Raya Logo" 
+                width={200}
+                height={48}
+                className="h-12 w-auto object-contain" 
+              />
             </div>
             <div className="flex flex-col space-y-2 text-on-surface-variant font-body-lg">
               <p className="text-white font-semibold tracking-wide">BERDIKARI RAYA SERVICE</p>

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import {
   Menu, X, Shield, Wrench, Phone, FileText, Briefcase
 } from "lucide-react";
+import Image from "next/image";
 
 const navItems = [
   {
@@ -53,10 +54,13 @@ export default function Navbar() {
     <>
       <nav className="fixed top-4 z-50 flex items-center justify-between gap-3 rounded-full px-5 py-2.5 bg-primary shadow-[0_8px_32px_rgba(0,0,0,0.5)] left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 md:top-6 md:w-max md:px-6">
         <div className="flex items-center gap-3 min-w-0">
-          <img
+          <Image
             src="/logo/berdikariraya.png"
             alt="Berdikari Raya Logo"
+            width={120}
+            height={32}
             className="hidden md:block h-8 w-auto object-contain shrink-0"
+            priority
           />
           <span className="font-bold text-on-primary text-sm md:text-base tracking-wider whitespace-nowrap select-none shrink-0">
             BERDIKARI RAYA SERVICE
@@ -65,13 +69,16 @@ export default function Navbar() {
         <button
           className="shrink-0 text-on-primary hover:text-secondary-container transition-colors p-1"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+          aria-expanded={isMenuOpen}
+          aria-controls="main-navigation-menu"
         >
           {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
       {isMenuOpen && (
-        <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-lg z-40 flex flex-col p-8 bg-surface-container-high rounded-2xl shadow-2xl backdrop-blur-xl border border-outline-variant/10">
+        <div id="main-navigation-menu" className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-lg z-40 flex flex-col p-8 bg-surface-container-high rounded-2xl shadow-2xl backdrop-blur-xl border border-outline-variant/10" role="dialog" aria-label="Menu navigasi utama">
           <div className="mb-6">
             <p className="font-label-md text-label-md text-on-primary-container uppercase tracking-widest">
               Menu
@@ -91,13 +98,15 @@ export default function Navbar() {
                       : "text-on-surface-variant hover:bg-surface-container hover:text-white"
                   }`}
                 >
-                  <div className={`w-11 h-11 rounded-lg overflow-hidden flex-shrink-0 border transition-all duration-200 ${
+                  <div className={`w-11 h-11 rounded-lg overflow-hidden flex-shrink-0 border transition-all duration-200 relative ${
                     isActive ? "border-secondary-container/40" : "border-white/10 group-hover:border-white/20"
                   }`}>
-                    <img
-                      className="w-full h-full object-cover"
-                      alt={item.label}
+                    <Image
                       src={item.thumb}
+                      alt={item.label}
+                      fill
+                      sizes="44px"
+                      className="object-cover"
                     />
                   </div>
                   <span className={`font-label-md text-label-md flex-1 ${isActive ? "text-secondary-container" : ""}`}>

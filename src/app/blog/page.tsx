@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { blogPosts } from "@/data/blog";
 
 const SITE_URL = "https://www.berdikariraya.com";
@@ -70,10 +71,12 @@ export default function BlogPage() {
               className="group grid grid-cols-1 md:grid-cols-2 gap-0 bg-surface-container-high rounded-3xl overflow-hidden border border-white/5 shadow-sleek hover:border-secondary-container/20 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="h-64 md:h-auto relative overflow-hidden">
-                <img
+                <Image
                   src={featured.img}
                   alt={featured.title}
-                  className="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-high/60 hidden md:block" />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent md:hidden" />
@@ -131,10 +134,12 @@ export default function BlogPage() {
                 className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden border border-white/5 shadow-sleek hover:border-secondary-container/20 hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="h-48 relative overflow-hidden">
-                  <img
+                  <Image
                     src={post.img}
                     alt={post.title}
-                    className="w-full h-full object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">

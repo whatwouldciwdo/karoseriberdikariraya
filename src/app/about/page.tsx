@@ -4,6 +4,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const SITE_URL = "https://www.berdikariraya.com";
 
@@ -121,10 +122,13 @@ export default function AboutPage() {
 
       {/* Hero */}
       <div className="relative w-full min-h-[65vh] flex items-end overflow-hidden bg-surface">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&q=80"
           alt="Workshop Berdikari Raya"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-35"
+          fill
+          sizes="100vw"
+          className="object-cover grayscale brightness-35"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
@@ -144,10 +148,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <div className="relative">
               <div className="h-[400px] md:h-[550px] bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-white/5 group">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
                   alt="Workshop Karoseri"
-                  className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               </div>
@@ -293,11 +299,13 @@ export default function AboutPage() {
                   key={idx}
                   className="flex-1 max-w-xs mx-auto sm:mx-0 bg-surface-container-high rounded-3xl overflow-hidden border border-white/5 shadow-sleek hover:-translate-y-2 transition-all duration-300 group"
                 >
-                  <div className="h-64 overflow-hidden">
-                    <img
+                  <div className="h-64 overflow-hidden relative">
+                    <Image
                       src={member.img}
                       alt={member.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      fill
+                      sizes="(max-width: 640px) 100vw, 320px"
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
                   <div className="p-6">
@@ -345,6 +353,7 @@ export default function AboutPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi Workshop Berdikari Raya Service - Jalan Macem No. 27, Cikiwul, Bantar Gebang, Bekasi"
                 className="grayscale brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
               />
             </div>
