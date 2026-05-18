@@ -57,7 +57,7 @@ const servicesList = [
   {
     title: "Karoseri Fuel Truck",
     desc: "Pembuatan karoseri fuel truck untuk distribusi BBM dengan desain aman, kuat, dan sesuai kebutuhan operasional. Kami memastikan standar keselamatan tertinggi dalam setiap unit yang kami produksi.",
-    img: "https://images.unsplash.com/photo-1561361058-c24e01e5e9b2?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     icon: Fuel,
     features: ["Tangki baja berkualitas tinggi", "Sistem perpipaan aman", "Sertifikasi migas"],
   },

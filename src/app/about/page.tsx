@@ -88,29 +88,6 @@ const values = [
   },
 ];
 
-const milestones = [
-  { year: "2012", event: "Berdikari Raya Service didirikan di Bekasi dengan fokus repair body kendaraan niaga." },
-  { year: "2015", event: "Ekspansi layanan ke pembuatan karoseri box aluminium dan box besi untuk pasar logistik." },
-  { year: "2018", event: "Mulai melayani order karoseri fuel truck dan lube truck untuk sektor energi dan tambang." },
-  { year: "2021", event: "Perluasan workshop dan penambahan tim untuk memenuhi permintaan yang terus meningkat." },
-  { year: "2024", event: "Mencapai lebih dari 500 unit karoseri selesai dan 50+ mitra industri aktif di seluruh Indonesia." },
-];
-
-const team = [
-  {
-    name: "Slamet Mulyono",
-    role: "Direktur Utama & Konsultan Teknis",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
-    contact: "+62 812-9157-8404",
-  },
-  {
-    name: "Dodo Prasetyo",
-    role: "Manajer Operasional & Pengawas Produksi",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    contact: "+62 821-1348-4129",
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="w-full" style={{ overflowX: "clip" }}>
@@ -134,7 +111,7 @@ export default function AboutPage() {
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
           <p className="font-label-md text-label-md text-secondary-container uppercase tracking-widest mb-4">Tentang Kami</p>
           <h1 className="font-headline-lg text-4xl md:text-headline-lg text-white tracking-tight leading-[1.1] mb-6">
-            Spesialis Karoseri Kendaraan Niaga<br />di Bekasi Sejak 2012
+            Spesialis Karoseri Kendaraan Niaga<br />di Bekasi
           </h1>
           <p className="font-body-lg text-lg text-on-surface-variant max-w-2xl leading-relaxed">
             Lebih dari satu dekade melayani industri, logistik, konstruksi, dan distribusi di seluruh JABODETABEK dan Bandung — dengan standar kualitas tertinggi dan komitmen penuh pada kepuasan pelanggan.
@@ -240,88 +217,37 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Milestones / Timeline */}
-        <section className="px-6 md:px-margin-desktop py-24 border-t border-outline-variant/10">
-          <div className="max-w-4xl mx-auto">
+        {/* Visi & Misi */}
+        <section className="relative px-6 md:px-margin-desktop py-24 border-t border-outline-variant/10 overflow-hidden">
+          <div className="absolute top-0 right-1/3 w-[400px] h-[400px] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <h2 className="font-headline-lg text-3xl md:text-5xl text-white mb-4">Perjalanan Kami</h2>
-              <div className="w-20 h-1.5 bg-secondary-container rounded-full mx-auto" />
+              <h2 className="font-headline-lg text-3xl md:text-5xl text-white mb-4">Visi &amp; Misi</h2>
+              <div className="w-20 h-1.5 bg-gradient-to-r from-secondary-container to-primary rounded-full mx-auto" />
             </div>
-
-            <div className="relative flex flex-col gap-0">
-              {/* Vertical line */}
-              <div className="absolute left-[39px] md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 -translate-x-1/2" />
-
-              {milestones.map((m, idx) => (
-                <div key={idx} className={`relative flex items-start gap-6 pb-12 ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                  {/* Left/Right content (desktop) */}
-                  <div className={`flex-1 hidden md:flex ${idx % 2 === 0 ? "justify-end pr-12" : "justify-start pl-12"}`}>
-                    <div className="bg-surface-container-high rounded-2xl p-6 border border-white/5 max-w-xs hover:border-secondary-container/20 transition-colors">
-                      <p className="font-body-md text-on-surface-variant leading-relaxed">{m.event}</p>
-                    </div>
-                  </div>
-
-                  {/* Year dot */}
-                  <div className="relative z-10 flex-shrink-0 w-20 flex flex-col items-center md:absolute md:left-1/2 md:-translate-x-1/2">
-                    <div className="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center shadow-lg shadow-secondary-container/30">
-                      <Target size={20} className="text-white" />
-                    </div>
-                    <span className="font-display-lg text-secondary-container text-xl mt-2">{m.year}</span>
-                  </div>
-
-                  {/* Mobile content */}
-                  <div className="flex-1 md:hidden">
-                    <p className="font-body-md text-on-surface-variant leading-relaxed pt-2">{m.event}</p>
-                  </div>
-
-                  {/* Right side placeholder (desktop) */}
-                  <div className="flex-1 hidden md:block" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Visi */}
+              <div className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-10 border border-white/5 hover:border-secondary-container/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-container/10 transition-all duration-500 group overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="w-14 h-14 bg-secondary-container/10 border border-secondary-container/30 rounded-2xl flex items-center justify-center mb-6">
+                  <Target size={28} className="text-secondary-container" strokeWidth={1.5} />
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Team */}
-        <section className="px-6 md:px-margin-desktop py-24 bg-surface-container-lowest border-t border-outline-variant/10">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-headline-lg text-3xl md:text-5xl text-white mb-4">Tim Kami</h2>
-              <div className="w-20 h-1.5 bg-secondary-container rounded-full mx-auto mb-6" />
-              <p className="font-body-lg text-on-surface-variant max-w-xl mx-auto">
-                Dipimpin oleh para profesional berpengalaman yang berdedikasi untuk memberikan hasil terbaik bagi setiap pelanggan.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-8 justify-center">
-              {team.map((member, idx) => (
-                <div
-                  key={idx}
-                  className="flex-1 max-w-xs mx-auto sm:mx-0 bg-surface-container-high rounded-3xl overflow-hidden border border-white/5 shadow-sleek hover:-translate-y-2 transition-all duration-300 group"
-                >
-                  <div className="h-64 overflow-hidden relative">
-                    <Image
-                      src={member.img}
-                      alt={member.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 320px"
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-headline-md text-xl text-white mb-1">{member.name}</h3>
-                    <p className="font-body-md text-secondary-container text-sm mb-3">{member.role}</p>
-                    <a
-                      href={`https://wa.me/${member.contact.replace(/\D/g, "")}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-body-md text-on-surface-variant hover:text-white text-sm transition-colors"
-                    >
-                      {member.contact}
-                    </a>
-                  </div>
+                <h3 className="font-headline-md text-2xl text-white mb-4 group-hover:text-secondary-container transition-colors">Visi</h3>
+                <p className="font-body-lg text-on-surface-variant leading-relaxed">
+                  Menghasilkan Produk Karoseri dengan Standar Kualitas Tinggi, Aman Digunakan Dalam Jangka Panjang dan Menjadikan Kepuasan Pelanggan Sebagai Standar Keberhasilan Perusahaan.
+                </p>
+              </div>
+              {/* Misi */}
+              <div className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-10 border border-white/5 hover:border-secondary-container/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-container/10 transition-all duration-500 group overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="w-14 h-14 bg-secondary-container/10 border border-secondary-container/30 rounded-2xl flex items-center justify-center mb-6">
+                  <Building2 size={28} className="text-secondary-container" strokeWidth={1.5} />
                 </div>
-              ))}
+                <h3 className="font-headline-md text-2xl text-white mb-4 group-hover:text-secondary-container transition-colors">Misi</h3>
+                <p className="font-body-lg text-on-surface-variant leading-relaxed">
+                  Menjadi Perusahaan Karoseri Terpercaya Yang Menghadirkan Kualitas Produk Yang Tangguh, Inovasi Berkelanjutan dan Layanan Profesional Untuk Mendukung Kesuksesan Bisnis Pelanggan.
+                </p>
+              </div>
             </div>
           </div>
         </section>

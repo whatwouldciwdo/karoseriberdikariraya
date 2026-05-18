@@ -42,7 +42,7 @@ const navItems = [
     href: "/contact",
     icon: Phone,
     // Fuel/tank truck - contact for quote
-    thumb: "https://images.unsplash.com/photo-1561361058-c24e01e5e9b2?w=120&h=120&fit=crop&q=80",
+    thumb: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&h=120&fit=crop&q=80",
   },
 ];
 
