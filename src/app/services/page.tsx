@@ -55,11 +55,39 @@ const jsonLdServices = {
 
 const servicesList = [
   {
+    title: "Karoseri Box Aluminium",
+    desc: "Karoseri box aluminium ringan, kuat, dan cocok untuk distribusi barang dengan tampilan profesional. Ideal untuk logistik, makanan, dan barang sensitif.",
+    img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
+    icon: Package,
+    features: ["Material aluminium grade A", "Ringan & efisiensi BBM", "Pintu swing & roll-up"],
+  },
+  {
+    title: "Karoseri Box Freezer",
+    desc: "Box freezer untuk menjaga suhu barang tetap stabil dan aman selama pengiriman. Ideal untuk produk makanan, farmasi, dan kebutuhan rantai dingin.",
+    img: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&q=80",
+    icon: Snowflake,
+    features: ["Insulasi PU foam tebal", "Pendingin Thermo King / Carrier", "Suhu -20°C s.d. +5°C"],
+  },
+  {
+    title: "Karoseri Box Besi",
+    desc: "Pembuatan box besi untuk kebutuhan angkut barang dengan struktur kokoh dan tahan lama. Pilihan terbaik untuk muatan berat dan industri.",
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    icon: Box,
+    features: ["Baja plat tebal", "Cat anti-karat", "Kapasitas muatan besar"],
+  },
+  {
+    title: "Karoseri Dump Truck",
+    desc: "Jasa pembuatan dump truck untuk kebutuhan proyek, konstruksi, dan pengangkutan material. Sistem hidrolik andal untuk pengosongan muatan cepat.",
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    icon: Hammer,
+    features: ["Sistem lift hidrolik", "Bak baja tebal", "Kapasitas 5–20 ton"],
+  },
+  {
     title: "Karoseri Fuel Truck",
     desc: "Pembuatan karoseri fuel truck untuk distribusi BBM dengan desain aman, kuat, dan sesuai kebutuhan operasional. Kami memastikan standar keselamatan tertinggi dalam setiap unit yang kami produksi.",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     icon: Fuel,
-    features: ["Tangki baja berkualitas tinggi", "Sistem perpipaan aman", "Sertifikasi migas"],
+    features: ["Tangki baja berkualitas tinggi", "Sistem perpipaan aman", "Garansi kebocoran"],
   },
   {
     title: "Karoseri Lube Truck",
@@ -76,32 +104,11 @@ const servicesList = [
     features: ["Kapasitas 5000–12000 liter", "Sistem semprotan depan & belakang", "Pompa tekanan tinggi"],
   },
   {
-    title: "Karoseri Box Aluminium",
-    desc: "Karoseri box aluminium ringan, kuat, dan cocok untuk distribusi barang dengan tampilan profesional. Ideal untuk logistik, makanan, dan barang sensitif.",
-    img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
-    icon: Package,
-    features: ["Material aluminium grade A", "Ringan & efisiensi BBM", "Pintu swing & roll-up"],
-  },
-  {
-    title: "Karoseri Box Besi",
-    desc: "Pembuatan box besi untuk kebutuhan angkut barang dengan struktur kokoh dan tahan lama. Pilihan terbaik untuk muatan berat dan industri.",
-    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-    icon: Box,
-    features: ["Baja plat tebal", "Cat anti-karat", "Kapasitas muatan besar"],
-  },
-  {
     title: "Karoseri Wing Box",
     desc: "Wing box untuk memudahkan proses bongkar muat barang dalam kegiatan logistik dan distribusi. Akses bukaan lebar dari dua sisi untuk efisiensi maksimal.",
     img: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80",
     icon: Truck,
     features: ["Bukaan sayap kanan & kiri", "Hidrolik otomatis", "Ruang muat luas"],
-  },
-  {
-    title: "Karoseri Dump Truck",
-    desc: "Jasa pembuatan dump truck untuk kebutuhan proyek, konstruksi, dan pengangkutan material. Sistem hidrolik andal untuk pengosongan muatan cepat.",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-    icon: Hammer,
-    features: ["Sistem lift hidrolik", "Bak baja tebal", "Kapasitas 5–20 ton"],
   },
   {
     title: "Karoseri Three Way Truck",
@@ -116,13 +123,6 @@ const servicesList = [
     img: "https://images.unsplash.com/photo-1545193544-312983719627?w=800&q=80",
     icon: Cylinder,
     features: ["Material food grade tersedia", "Lapisan dalam anti-korosi", "Berbagai kapasitas"],
-  },
-  {
-    title: "Karoseri Box Freezer",
-    desc: "Box freezer untuk menjaga suhu barang tetap stabil dan aman selama pengiriman. Ideal untuk produk makanan, farmasi, dan kebutuhan rantai dingin.",
-    img: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&q=80",
-    icon: Snowflake,
-    features: ["Insulasi PU foam tebal", "Pendingin Thermo King / Carrier", "Suhu -20°C s.d. +5°C"],
   },
   {
     title: "Repair Body Custom",
@@ -234,7 +234,7 @@ export default function ServicesPage() {
               href="https://wa.me/6281291578404"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-secondary-container text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-secondary-container/20"
+              className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#25D366]/20"
             >
               Konsultasi Gratis via WhatsApp
               <ArrowRight size={20} />

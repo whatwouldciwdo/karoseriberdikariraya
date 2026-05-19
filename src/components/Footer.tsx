@@ -17,7 +17,8 @@ export default function Footer() {
                 alt="Berdikari Raya Logo" 
                 width={200}
                 height={48}
-                className="h-12 w-auto object-contain" 
+                className="h-12 w-auto object-contain"
+                style={{ width: "auto" }}
               />
             </div>
             <div className="flex flex-col space-y-2 text-on-surface-variant font-body-lg">

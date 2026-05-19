@@ -11,7 +11,7 @@ const SITE_URL = "https://www.berdikariraya.com";
 export const metadata: Metadata = {
   title: "Tentang Berdikari Raya Service | Karoseri Truck Bekasi Sejak 2012",
   description:
-    "Berdikari Raya Service berdiri sejak 2012 sebagai spesialis karoseri kendaraan niaga di Bekasi, JABODETABEK, dan Bandung. Lebih dari 500 unit karoseri selesai, 50+ mitra industri, dan pengalaman 10+ tahun di bidang fuel truck, dump truck, box aluminium, dan repair body.",
+    "Berdikari Raya Service merupakan spesialis karoseri kendaraan niaga di Bekasi, JABODETABEK, dan Bandung. Lebih dari 500 unit karoseri selesai, 50+ mitra industri, dan pengalaman 10+ tahun di bidang fuel truck, dump truck, box aluminium, dan repair body.",
   keywords: [
     "tentang Berdikari Raya Service",
     "karoseri truck Bekasi terpercaya",
@@ -124,7 +124,7 @@ export default function AboutPage() {
         <section className="px-6 md:px-margin-desktop py-20 md:py-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             <div className="relative">
-              <div className="h-[400px] md:h-[550px] bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-white/5 group">
+              <div className="h-[400px] md:h-[550px] bg-surface-container-high rounded-2xl relative overflow-hidden shadow-sleek border border-white/5 group">
                 <Image
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
                   alt="Workshop Karoseri"
@@ -160,7 +160,7 @@ export default function AboutPage() {
                 <div className="space-y-5">
                   <p className="font-body-lg text-on-surface-variant leading-relaxed">
                     <strong className="text-white font-semibold">Berdikari Raya Service</strong> adalah perusahaan jasa{" "}
-                    <strong className="text-white font-semibold">karoseri truk di JABODETABEK dan Bandung</strong> yang berdiri sejak 2012. Kami melayani pembuatan dan perbaikan berbagai kebutuhan kendaraan niaga untuk sektor industri, logistik, konstruksi, dan distribusi.
+                    <strong className="text-white font-semibold">karoseri truk di JABODETABEK dan Bandung</strong> Kami melayani pembuatan dan perbaikan berbagai kebutuhan kendaraan niaga untuk sektor industri, logistik, konstruksi, dan distribusi.
                   </p>
                   <p className="font-body-lg text-on-surface-variant leading-relaxed">
                     Workshop kami yang berlokasi strategis di Bekasi dilengkapi dengan peralatan modern dan dioperasikan oleh tenaga mekanik berpengalaman yang terlatih untuk menghasilkan produk karoseri berkualitas tinggi, rapi, fungsional, dan sesuai spesifikasi pelanggan.
@@ -178,7 +178,7 @@ export default function AboutPage() {
                   href="https://wa.me/6281291578404"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-secondary-container text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-secondary-container/20 group"
+                  className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#25D366]/20 group"
                 >
                   Konsultasi Sekarang
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

@@ -60,6 +60,7 @@ export default function Navbar() {
             width={120}
             height={32}
             className="hidden md:block h-8 w-auto object-contain shrink-0"
+            style={{ width: "auto" }}
             priority
           />
           <span className="font-bold text-on-primary text-sm md:text-base tracking-wider whitespace-nowrap select-none shrink-0">

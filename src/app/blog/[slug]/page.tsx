@@ -140,7 +140,7 @@ export default function BlogDetail({ params }: Props) {
               href="https://wa.me/6281291578404"
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3 bg-surface-container-high border border-white/5 rounded-full text-white font-label-md text-sm hover:border-secondary-container/50 transition-colors"
+              className="px-6 py-3 bg-[#25D366] text-white rounded-full font-label-md text-sm shadow-lg shadow-[#25D366]/20 hover:brightness-110 transition-all active:scale-95"
             >
               Konsultasi Proyek Karoseri
             </a>

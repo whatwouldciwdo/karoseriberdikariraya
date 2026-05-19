@@ -21,6 +21,30 @@ const partnerLogos = [
 
 const servicesList = [
   { 
+    title: "Karoseri Box Aluminium", 
+    desc: "Karoseri box aluminium ringan, kuat, dan cocok untuk distribusi barang dengan tampilan profesional.", 
+    img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
+    icon: Package 
+  },
+  { 
+    title: "Karoseri Box Freezer", 
+    desc: "Box freezer untuk menjaga suhu barang tetap stabil dan aman selama pengiriman.", 
+    img: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&q=80",
+    icon: Snowflake 
+  },
+  { 
+    title: "Karoseri Box Besi", 
+    desc: "Pembuatan box besi untuk kebutuhan angkut barang dengan struktur kokoh dan tahan lama.", 
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    icon: Box 
+  },
+  { 
+    title: "Karoseri Dump Truck", 
+    desc: "Jasa pembuatan dump truck untuk kebutuhan proyek, konstruksi, dan pengangkutan material.", 
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    icon: Hammer 
+  },
+  { 
     title: "Karoseri Fuel Truck", 
     desc: "Pembuatan karoseri fuel truck untuk distribusi BBM dengan desain aman, kuat, dan sesuai kebutuhan operasional.", 
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
@@ -39,28 +63,10 @@ const servicesList = [
     icon: CloudRain 
   },
   { 
-    title: "Karoseri Box Aluminium", 
-    desc: "Karoseri box aluminium ringan, kuat, dan cocok untuk distribusi barang dengan tampilan profesional.", 
-    img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
-    icon: Package 
-  },
-  { 
-    title: "Karoseri Box Besi", 
-    desc: "Pembuatan box besi untuk kebutuhan angkut barang dengan struktur kokoh dan tahan lama.", 
-    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-    icon: Box 
-  },
-  { 
     title: "Karoseri Wing Box", 
     desc: "Wing box untuk memudahkan proses bongkar muat barang dalam kegiatan logistik dan distribusi.", 
     img: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80",
     icon: Truck 
-  },
-  { 
-    title: "Karoseri Dump Truck", 
-    desc: "Jasa pembuatan dump truck untuk kebutuhan proyek, konstruksi, dan pengangkutan material.", 
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-    icon: Hammer 
   },
   { 
     title: "Karoseri Three Way Truck", 
@@ -73,12 +79,6 @@ const servicesList = [
     desc: "Pembuatan truck tangki untuk berbagai kebutuhan muatan cair industri.", 
     img: "https://images.unsplash.com/photo-1545193544-312983719627?w=800&q=80",
     icon: Cylinder 
-  },
-  { 
-    title: "Karoseri Box Freezer", 
-    desc: "Box freezer untuk menjaga suhu barang tetap stabil dan aman selama pengiriman.", 
-    img: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&q=80",
-    icon: Snowflake 
   },
   { 
     title: "Repair Body Custom", 
@@ -133,25 +133,13 @@ export default function Home() {
         {/* Headline */}
         <div className="absolute bottom-[12%] md:bottom-[10%] left-6 md:left-margin-desktop max-w-5xl z-10 pr-6">
           <h1 className="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg text-white tracking-tight leading-[1.2] drop-shadow-2xl mb-4 md:mb-6">
-            Jasa Karoseri Truck, Repair Body Custom,<br className="hidden md:block" />Servis Hydraulic System
+            Spesialis Karoseri Truck, Repair Body Custom,<br className="hidden md:block" />Servis Hydraulic System
           </h1>
           <p className="font-body-lg text-base sm:text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-lg leading-relaxed font-medium">
             Berdikari Raya Service melayani pembuatan karoseri truk, repair body custom, service hydraulic system, box aluminium, wing box, dump truck, water sprayer truck, fuel truck, dan truck tangki untuk kebutuhan industri dan logistik.
           </p>
         </div>
-
-        {/* Scroll Indicator FAB */}
-        <div className="absolute bottom-margin-desktop right-margin-desktop z-20">
-          <button
-            className="w-16 h-16 bg-secondary-container rounded-full flex items-center justify-center shadow-sleek hover:scale-110 transition-transform active:scale-90"
-            aria-label="Gulir ke bawah"
-            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
-          >
-            <ArrowDown className="text-white" size={32} />
-          </button>
-        </div>
       </div>
-
       {/* Tentang Kami Section */}
       <main className="relative bg-background px-6 md:px-margin-desktop py-20 md:py-32 space-y-20 md:space-y-32 overflow-hidden">
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -190,7 +178,7 @@ export default function Home() {
                 href="https://wa.me/6281291578404"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-secondary-container text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 flex items-center gap-2 group shadow-lg shadow-secondary-container/20 w-fit"
+                className="bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 flex items-center gap-2 group shadow-lg shadow-[#25D366]/20 w-fit"
               >
                 Konsultasi Sekarang
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -267,8 +255,8 @@ export default function Home() {
                     {service.desc}
                   </p>
                   <div className="flex items-center gap-2 text-secondary-container font-label-md text-xs md:text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
-                    <span style={{ color: '#e40468' }}>Lihat Detail</span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#e40468' }} />
+                    <span style={{ color: '#e16963' }}>Lihat Detail</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#e16963' }} />
                   </div>
                 </div>
               </div>
@@ -285,11 +273,11 @@ export default function Home() {
           <div className="w-full relative overflow-hidden py-8">
             <LogoLoop
               logos={partnerLogos}
-              speed={120}
+              speed={50}
               direction="left"
               logoHeight={72}
               gap={80}
-              hoverSpeed={30}
+              hoverSpeed={15}
               scaleOnHover
               fadeOut
               fadeOutColor="#0a0a0a"

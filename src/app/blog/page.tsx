@@ -183,7 +183,7 @@ export default function BlogPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 bg-secondary-container text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-secondary-container/20 group"
+                className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#25D366]/20 group"
               >
                 Hubungi Kami
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

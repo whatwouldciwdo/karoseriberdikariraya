@@ -9,7 +9,7 @@
   --color-on-primary: #2f3131;
   --color-surface-container-high: #2a2a2a;
   --color-inverse-surface: #e5e2e1;
-  --color-secondary-container: #e40468;
+  --color-secondary-container: #e16963;
   --color-on-tertiary: #313030;
   --color-tertiary-fixed: #e5e2e1;
   --color-on-primary-fixed-variant: #454747;
@@ -130,10 +130,6 @@
   }
   /* Sticky WhatsApp FAB */
   .wa-fab {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 9999;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -144,6 +140,7 @@
     box-shadow: 0 4px 24px rgba(37,211,102,0.45);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
+    position: relative;
   }
   .wa-fab:hover {
     transform: scale(1.12);
