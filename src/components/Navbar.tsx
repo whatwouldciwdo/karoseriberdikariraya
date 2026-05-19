@@ -31,7 +31,7 @@ const navItems = [
     thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&h=120&fit=crop&q=80",
   },
   {
-    label: "Blog",
+    label: "News",
     href: "/blog",
     icon: FileText,
     // Box truck / cargo - logistics article

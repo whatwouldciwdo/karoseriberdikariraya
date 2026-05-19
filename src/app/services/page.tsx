@@ -212,10 +212,10 @@ export default function ServicesPage() {
                   href={`https://wa.me/6281291578404?text=Halo%2C%20saya%20ingin%20tanya%20tentang%20${encodeURIComponent(service.title)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-secondary-container font-label-md text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all"
+                  className="flex items-center gap-2 font-label-md text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all"
                 >
-                  <span>Konsultasi Gratis</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <span style={{ color: '#25D366' }}>Konsultasi Sekarang</span>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#25D366' }} />
                 </a>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function ServicesPage() {
         </div>
 
         {/* CTA Bottom */}
-          <div className="mt-24 max-w-4xl mx-auto text-center bg-surface-container-high rounded-3xl p-12 border border-white/5 shadow-sleek relative overflow-hidden">
+        <div className="mt-24 max-w-4xl mx-auto text-center bg-surface-container-high rounded-3xl p-12 border border-white/5 shadow-sleek relative overflow-hidden">
           <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="relative z-10">
             <h2 className="font-headline-lg text-3xl md:text-5xl text-white mb-4">Tidak Ada di Daftar? Kami Bisa Custom!</h2>
@@ -236,7 +236,7 @@ export default function ServicesPage() {
               rel="noreferrer"
               className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#25D366]/20"
             >
-              Konsultasi Gratis via WhatsApp
+              Konsultasi Sekarang
               <ArrowRight size={20} />
             </a>
           </div>

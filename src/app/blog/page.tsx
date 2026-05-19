@@ -9,9 +9,9 @@ import { blogPosts } from "@/data/blog";
 const SITE_URL = "https://www.berdikariraya.com";
 
 export const metadata: Metadata = {
-  title: "Blog Karoseri Truck | Tips, Panduan & Informasi Industri",
+  title: "News Karoseri Truck | Tips, Panduan & Informasi Industri",
   description:
-    "Baca artikel terbaru seputar karoseri truck, tips perawatan kendaraan niaga, panduan memilih jenis karoseri, dan informasi industri logistik dari Berdikari Raya Service — ahli karoseri di Bekasi & JABODETABEK.",
+    "Baca berita dan artikel terbaru seputar karoseri truck, tips perawatan kendaraan niaga, panduan memilih jenis karoseri, dan informasi industri logistik dari Berdikari Raya Service — ahli karoseri di Bekasi & JABODETABEK.",
   keywords: [
     "artikel karoseri truck",
     "tips perawatan dump truck",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: {
-    title: "Blog Karoseri Truck | Berdikari Raya Service",
+    title: "News Karoseri Truck | Berdikari Raya Service",
     description:
-      "Artikel, panduan, dan tips seputar karoseri kendaraan niaga: fuel truck, dump truck, box aluminium, dan lainnya dari spesialis karoseri Bekasi.",
+      "Berita, artikel, panduan, dan tips seputar karoseri kendaraan niaga: fuel truck, dump truck, box aluminium, dan lainnya dari spesialis karoseri Bekasi.",
     url: `${SITE_URL}/blog`,
     images: [{ url: "/logo/berdikariraya.png", alt: "Blog Berdikari Raya Service" }],
   },
@@ -51,7 +51,7 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-background via-surface to-surface-container-high" />
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 2px, transparent 0)', backgroundSize: '48px 48px' }} />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
-          <p className="font-label-md text-label-md text-secondary-container uppercase tracking-widest mb-4">Blog & Artikel</p>
+          <p className="font-label-md text-label-md text-secondary-container uppercase tracking-widest mb-4">News & Artikel</p>
           <h1 className="font-headline-lg text-4xl md:text-headline-lg text-white tracking-tight leading-[1.1] mb-4">
             Tips, Panduan & Wawasan<br />Dunia Karoseri Truck
           </h1>
