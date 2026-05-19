@@ -136,7 +136,7 @@ export default function Home() {
             Spesialis Karoseri Truck, Repair Body Custom,<br className="hidden md:block" />Servis Hydraulic System
           </h1>
           <p className="font-body-lg text-base sm:text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-lg leading-relaxed font-medium">
-            Berdikari Raya Service melayani pembuatan karoseri truk, repair body custom, service hydraulic system, box aluminium, wing box, dump truck, water sprayer truck, fuel truck, dan truck tangki untuk kebutuhan industri dan logistik.
+            Spesialis pembuatan karoseri truk, repair body custom, service hydraulic system, box aluminium, wing box, dump truck, water sprayer truck, fuel truck, dan truck tangki untuk kebutuhan Industri, Logistik serta Distribusi.
           </p>
         </div>
       </div>
@@ -255,8 +255,8 @@ export default function Home() {
                     {service.desc}
                   </p>
                   <div className="flex items-center gap-2 text-secondary-container font-label-md text-xs md:text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
-                    <span style={{ color: '#e16963' }}>Lihat Detail</span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#e16963' }} />
+                    <span style={{ color: '#FF2A2A' }}>Lihat Detail</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#FF2A2A' }} />
                   </div>
                 </div>
               </div>
