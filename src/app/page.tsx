@@ -146,8 +146,8 @@ export default function Home() {
             alt="Berdikari Raya Service background"
             fill
             priority
-            quality={60}
-            sizes="100vw"
+            quality={40}
+            sizes="(max-width: 640px) 640px, (max-width: 1024px) 828px, 1200px"
             className={`object-cover grayscale brightness-50 transition-opacity duration-700 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
           />
           {/* Video only loaded on desktop/fast connection */}
@@ -282,8 +282,8 @@ export default function Home() {
                     src={service.img}
                     alt={service.title}
                     fill
-                    quality={60}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                    quality={55}
+                    sizes="(max-width: 640px) 95vw, (max-width: 1024px) 47vw, 380px"
                     className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
