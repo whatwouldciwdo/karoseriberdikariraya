@@ -163,7 +163,8 @@ export default function Home() {
               alt="Berdikari Raya Service Collage"
               fill
               priority
-              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={60}
+              sizes="(max-width: 768px) 100vw, 600px"
               className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
@@ -250,7 +251,8 @@ export default function Home() {
                     src={service.img}
                     alt={service.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    quality={60}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                     className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>

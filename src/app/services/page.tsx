@@ -6,6 +6,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import KonsultasiButton from "@/components/KonsultasiButton";
+import Image from "next/image";
 
 const SITE_URL = "https://www.berdikariraya.com";
 
@@ -152,10 +153,14 @@ export default function ServicesPage() {
 
       {/* Hero Section */}
       <div className="relative w-full min-h-[55vh] flex items-end overflow-hidden bg-surface">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&q=80"
           alt="Layanan Karoseri"
-          className="absolute inset-0 w-full h-full object-cover grayscale brightness-40"
+          fill
+          priority
+          quality={60}
+          sizes="(max-width: 1200px) 100vw, 1600px"
+          className="object-cover grayscale brightness-40"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
@@ -179,10 +184,13 @@ export default function ServicesPage() {
             >
               {/* Image */}
               <div className="h-52 relative overflow-hidden bg-surface-container">
-                <img
+                <Image
                   src={service.img}
                   alt={service.title}
-                  className="w-full h-full object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+                  fill
+                  quality={60}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                  className="object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent" />
                 <div className="absolute top-4 right-4 w-11 h-11 bg-secondary-container/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
