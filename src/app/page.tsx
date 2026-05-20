@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import {
   Fuel, Droplets, CloudRain, Package, Box, Truck, Hammer, Replace, Cylinder, Snowflake, Wrench, Settings,
   UserCheck, CircleDollarSign, ShieldCheck, Zap, HardHat, MapPin, Phone, Mail, ArrowRight, ArrowDown, CheckCircle
@@ -117,20 +118,50 @@ const reasonsList = [
 ];
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // Only load video on non-mobile and when connection is fast enough
+    const nav = navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } };
+    const conn = nav.connection;
+    const isSaveData = conn?.saveData;
+    const isSlowConnection = conn?.effectiveType === "slow-2g" || conn?.effectiveType === "2g";
+    const isMobile = window.innerWidth < 768;
+
+    if (!isSaveData && !isSlowConnection && !isMobile) {
+      setVideoLoaded(true);
+    }
+  }, []);
+
   return (
     <div className="w-full" style={{ overflowX: 'clip' }}>
       {/* Hero Background Section */}
       <div className="relative w-full h-screen overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 bg-surface">
-          <video
-            className="w-full h-full object-cover grayscale brightness-50"
-            autoPlay
-            loop
-            muted
-            playsInline
-            src="/video/Berdikari.mp4"
+          {/* Poster image always shown */}
+          <Image
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=60"
+            alt="Berdikari Raya Service background"
+            fill
+            priority
+            quality={60}
+            sizes="100vw"
+            className={`object-cover grayscale brightness-50 transition-opacity duration-700 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
           />
+          {/* Video only loaded on desktop/fast connection */}
+          {videoLoaded && (
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover grayscale brightness-50"
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="/video/Berdikari.mp4"
+            />
+          )}
           {/* Grain Overlay */}
           <div
             className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay"
