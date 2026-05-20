@@ -2,7 +2,7 @@
 
 import {
   Fuel, Droplets, CloudRain, Package, Box, Truck, Hammer, Replace, Cylinder, Snowflake, Wrench, Settings,
-  UserCheck, CircleDollarSign, ShieldCheck, Zap, HardHat, MapPin, Phone, Mail, ArrowRight, ArrowDown
+  UserCheck, CircleDollarSign, ShieldCheck, Zap, HardHat, MapPin, Phone, Mail, ArrowRight, ArrowDown, CheckCircle
 } from "lucide-react";
 import LogoLoopBase from "@/components/LogoLoop";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,75 +22,87 @@ const partnerLogos = [
 const servicesList = [
   {
     title: "Karoseri Box Aluminium",
-    desc: "Karoseri box aluminium ringan, kuat, dan cocok untuk distribusi barang dengan tampilan profesional.",
+    desc: "Karoseri box aluminium ringan, kuat, dan cocok untuk distribusi barang dengan tampilan profesional. Ideal untuk logistik, makanan, dan barang sensitif.",
     img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
-    icon: Package
+    icon: Package,
+    features: ["Material aluminium grade A", "Ringan & efisiensi BBM", "Pintu swing & roll-up"],
   },
   {
     title: "Karoseri Box Freezer",
-    desc: "Box freezer untuk menjaga suhu barang tetap stabil dan aman selama pengiriman.",
+    desc: "Box freezer untuk menjaga suhu barang tetap stabil dan aman selama pengiriman. Ideal untuk produk makanan, farmasi, dan kebutuhan rantai dingin.",
     img: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&q=80",
-    icon: Snowflake
+    icon: Snowflake,
+    features: ["Insulasi PU foam tebal", "Pendingin Thermo King / Carrier", "Suhu -20°C s.d. +5°C"],
   },
   {
     title: "Karoseri Box Besi",
-    desc: "Pembuatan box besi untuk kebutuhan angkut barang dengan struktur kokoh dan tahan lama.",
+    desc: "Pembuatan box besi untuk kebutuhan angkut barang dengan struktur kokoh dan tahan lama. Pilihan terbaik untuk muatan berat dan industri.",
     img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-    icon: Box
+    icon: Box,
+    features: ["Baja plat tebal", "Cat anti-karat", "Kapasitas muatan besar"],
   },
   {
     title: "Karoseri Dump Truck",
-    desc: "Jasa pembuatan dump truck untuk kebutuhan proyek, konstruksi, dan pengangkutan material.",
+    desc: "Jasa pembuatan dump truck untuk kebutuhan proyek, konstruksi, dan pengangkutan material. Sistem hidrolik andal untuk pengosongan muatan cepat.",
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-    icon: Hammer
+    icon: Hammer,
+    features: ["Sistem lift hidrolik", "Bak baja tebal", "Kapasitas 5–20 ton"],
   },
   {
     title: "Karoseri Fuel Truck",
-    desc: "Pembuatan karoseri fuel truck untuk distribusi BBM dengan desain aman, kuat, dan sesuai kebutuhan operasional.",
+    desc: "Pembuatan karoseri fuel truck untuk distribusi BBM dengan desain aman, kuat, dan sesuai kebutuhan operasional. Kami memastikan standar keselamatan tertinggi dalam setiap unit yang kami produksi.",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    icon: Fuel
+    icon: Fuel,
+    features: ["Tangki baja berkualitas tinggi", "Sistem perpipaan aman", "Garansi kebocoran"],
   },
   {
     title: "Karoseri Lube Truck",
-    desc: "Jasa pembuatan lube truck untuk kebutuhan pelumasan dan servis lapangan di area industri dan tambang.",
+    desc: "Jasa pembuatan lube truck untuk kebutuhan pelumasan dan servis lapangan di area industri dan tambang. Dirancang untuk mobilitas tinggi di medan berat.",
     img: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=800&q=80",
-    icon: Droplets
+    icon: Droplets,
+    features: ["Multi-kompartemen pelumas", "Pompa hidrolik presisi", "Desain tahan medan berat"],
   },
   {
     title: "Karoseri Water Sprayer",
-    desc: "Solusi water sprayer truck untuk penyiraman jalan, proyek, dan area operasional industri.",
+    desc: "Solusi water sprayer truck untuk penyiraman jalan, proyek, dan area operasional industri. Kapasitas besar dengan sistem semprotan yang merata dan efisien.",
     img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80",
-    icon: CloudRain
+    icon: CloudRain,
+    features: ["Kapasitas 5000–12000 liter", "Sistem semprotan depan & belakang", "Pompa tekanan tinggi"],
   },
   {
     title: "Karoseri Wing Box",
-    desc: "Wing box untuk memudahkan proses bongkar muat barang dalam kegiatan logistik dan distribusi.",
+    desc: "Wing box untuk memudahkan proses bongkar muat barang dalam kegiatan logistik dan distribusi. Akses bukaan lebar dari dua sisi untuk efisiensi maksimal.",
     img: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80",
-    icon: Truck
+    icon: Truck,
+    features: ["Bukaan sayap kanan & kiri", "Hidrolik otomatis", "Ruang muat luas"],
   },
   {
     title: "Karoseri Three Way Truck",
-    desc: "Solusi dump truck three way dengan sistem bukaan fleksibel untuk operasional yang lebih efisien.",
+    desc: "Solusi dump truck three way dengan sistem bukaan fleksibel untuk operasional yang lebih efisien. Dapat membuka ke tiga arah sesuai kebutuhan lokasi.",
     img: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&q=80",
-    icon: Replace
+    icon: Replace,
+    features: ["Bukaan 3 arah", "Kontrol hidrolik akurat", "Cocok area sempit"],
   },
   {
     title: "Karoseri Truck Tangki",
-    desc: "Pembuatan truck tangki untuk berbagai kebutuhan muatan cair industri.",
+    desc: "Pembuatan truck tangki untuk berbagai kebutuhan muatan cair industri, mulai dari air bersih, minyak goreng, hingga bahan kimia non-B3.",
     img: "https://images.unsplash.com/photo-1545193544-312983719627?w=800&q=80",
-    icon: Cylinder
+    icon: Cylinder,
+    features: ["Material food grade tersedia", "Lapisan dalam anti-korosi", "Berbagai kapasitas"],
   },
   {
     title: "Repair Body Custom",
-    desc: "Perbaikan dan custom body kendaraan niaga sesuai dengan spesifikasi dan kebutuhan operasional Anda.",
+    desc: "Perbaikan dan custom body kendaraan niaga sesuai dengan spesifikasi dan kebutuhan operasional Anda. Kami menangani semua jenis kerusakan body kendaraan niaga.",
     img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
-    icon: Wrench
+    icon: Wrench,
+    features: ["Analisa kerusakan gratis", "Spare part original", "Garansi perbaikan 6 bulan"],
   },
   {
     title: "Service Hydraulic System",
-    desc: "Perawatan dan perbaikan sistem hidrolik untuk memastikan performa pengangkatan yang optimal.",
+    desc: "Perawatan dan perbaikan sistem hidrolik untuk memastikan performa pengangkatan yang optimal. Tim ahli kami siap menangani semua merek dan tipe sistem hidrolik.",
     img: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80",
-    icon: Settings
+    icon: Settings,
+    features: ["Servis berkala terjadwal", "Penggantian seal & komponen", "Uji tekanan sistem"],
   }
 ];
 
@@ -254,10 +266,23 @@ export default function Home() {
                   <p className="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed line-clamp-3 mb-4 md:mb-6 flex-1">
                     {service.desc}
                   </p>
-                  <div className="flex items-center gap-2 font-label-md text-xs md:text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
+                  <ul className="flex flex-col gap-2 mb-6">
+                    {service.features.map((f, i) => (
+                      <li key={i} className="flex items-center gap-2 text-on-surface-variant text-xs md:text-sm">
+                        <CheckCircle size={14} className="text-secondary-container shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <a 
+                    href={`https://wa.me/6281291578404?text=Halo%2C%20saya%20ingin%20tanya%20tentang%20${encodeURIComponent(service.title)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 font-label-md text-xs md:text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all"
+                  >
                     <span style={{ color: '#25D366' }}>Konsultasi Sekarang</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#25D366' }} />
-                  </div>
+                  </a>
                 </div>
               </div>
             ))}
