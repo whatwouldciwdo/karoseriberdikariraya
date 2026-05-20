@@ -9,6 +9,7 @@ import LogoLoopBase from "@/components/LogoLoop";
 const LogoLoop = LogoLoopBase as any;
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import KonsultasiButton from "@/components/KonsultasiButton";
 import Image from "next/image";
 
 const partnerLogos = [
@@ -143,12 +144,12 @@ export default function Home() {
         <Navbar />
 
         {/* Headline */}
-        <div className="absolute bottom-[12%] md:bottom-[10%] left-6 md:left-margin-desktop max-w-5xl z-10 pr-6">
-          <h1 className="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg text-white tracking-tight leading-[1.2] drop-shadow-2xl mb-4 md:mb-6">
-            Spesialis Karoseri Truck, Repair Body Custom,<br className="hidden md:block" />Servis Hydraulic System
+        <div className="absolute bottom-[8%] md:bottom-[5%] left-6 md:left-margin-desktop max-w-5xl z-10 pr-6">
+          <h1 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.3] drop-shadow-2xl mb-4 md:mb-6 max-w-4xl">
+            Solusi karoseri truck, repair body custom, dan service hydraulic system untuk kebutuhan operasional industri, logistik, serta distribusi perusahaan.
           </h1>
           <p className="font-body-lg text-base sm:text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-lg leading-relaxed font-medium">
-            Spesialis pembuatan karoseri truk, repair body custom, service hydraulic system, box aluminium, wing box, dump truck, water sprayer truck, fuel truck, dan truck tangki untuk kebutuhan Industri, Logistik serta Distribusi.
+            Spesialis dalam pembuatan karoseri truck meliputi box aluminium, box freezer, box besi, wing box, dump truck, dump truck three way, lube truck, fuel truck, truck tangki, water sprayer truck, hingga repair body custom dan service hydraulic system dengan standar pengerjaan yang terukur serta profesional.
           </p>
         </div>
       </div>
@@ -161,6 +162,7 @@ export default function Home() {
               src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80"
               alt="Berdikari Raya Service Collage"
               fill
+              priority
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
             />
@@ -177,24 +179,19 @@ export default function Home() {
 
               <div className="space-y-6">
                 <p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">
-                  <strong className="text-white font-semibold">Berdikari Raya Service</strong> adalah perusahaan jasa <strong className="text-white font-semibold">karoseri truk di JABODETABEK dan Bandung</strong> yang melayani pembuatan dan perbaikan berbagai kebutuhan kendaraan niaga. Kami menangani <strong className="text-white font-semibold">karoseri box aluminium, box freezer, box besi, wing box, dump truck, dump truck three way, lube truck, fuel truck, truck tangki, water sprayer truck</strong>, hingga <strong className="text-white font-semibold">repair body custom</strong> dan <strong className="text-white font-semibold">service hydraulic system</strong>.
+                  Berdikari Raya Service adalah perusahaan jasa karoseri truck di Jabodetabek dan Bandung yang melayani pembuatan serta perbaikan berbagai kebutuhan kendaraan niaga untuk sektor industri, logistik, konstruksi, dan distribusi.
                 </p>
                 <p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">
-                  Didukung tenaga kerja berpengalaman dan proses kerja yang terstandar, kami berkomitmen memberikan hasil yang kuat, rapi, fungsional, dan sesuai kebutuhan operasional pelanggan dari berbagai sektor industri, logistik, konstruksi, dan distribusi.
+                  Kami menangani berbagai jenis karoseri truck meliputi box aluminium, box freezer, box besi, wing box, dump truck, dump truck three way, lube truck, fuel truck, truck tangki, water sprayer truck, hingga repair body custom dan service hydraulic system.
+                </p>
+                <p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">
+                  Didukung tenaga kerja berpengalaman dan proses pengerjaan yang terstandar, Berdikari Raya Service berkomitmen menghadirkan hasil yang kuat, rapi, fungsional, dan sesuai kebutuhan operasional perusahaan dengan standar kerja yang profesional dan terukur.
                 </p>
               </div>
             </div>
 
             <div className="pt-4">
-              <a
-                href="https://wa.me/6281291578404"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 flex items-center gap-2 group shadow-lg shadow-[#25D366]/20 w-fit"
-              >
-                Konsultasi Sekarang
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              <KonsultasiButton message="Halo, saya ingin konsultasi tentang pembuatan/perbaikan karoseri." variant="solid" />
             </div>
           </div>
         </section>
@@ -274,15 +271,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <a 
-                    href={`https://wa.me/6281291578404?text=Halo%2C%20saya%20ingin%20tanya%20tentang%20${encodeURIComponent(service.title)}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 font-label-md text-xs md:text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all"
-                  >
-                    <span style={{ color: '#25D366' }}>Konsultasi Sekarang</span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#25D366' }} />
-                  </a>
+                  <KonsultasiButton message={`Halo, saya ingin tanya tentang ${service.title}`} variant="text" />
                 </div>
               </div>
             ))}

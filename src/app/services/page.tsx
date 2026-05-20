@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import KonsultasiButton from "@/components/KonsultasiButton";
 
 const SITE_URL = "https://www.berdikariraya.com";
 
@@ -208,15 +209,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
 
-                <a
-                  href={`https://wa.me/6281291578404?text=Halo%2C%20saya%20ingin%20tanya%20tentang%20${encodeURIComponent(service.title)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 font-label-md text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all"
-                >
-                  <span style={{ color: '#25D366' }}>Konsultasi Sekarang</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" style={{ color: '#25D366' }} />
-                </a>
+                <KonsultasiButton message={`Halo, saya ingin tanya tentang ${service.title}`} variant="text" />
               </div>
             </div>
           ))}
@@ -230,15 +223,9 @@ export default function ServicesPage() {
             <p className="font-body-lg text-on-surface-variant text-lg mb-8 max-w-xl mx-auto">
               Setiap bisnis punya kebutuhan yang berbeda. Tim kami siap berdiskusi dan merancang solusi karoseri custom sesuai spesifikasi operasional Anda — konsultasi gratis, tanpa komitmen.
             </p>
-            <a
-              href="https://wa.me/6281291578404"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#25D366]/20"
-            >
-              Konsultasi Sekarang
-              <ArrowRight size={20} />
-            </a>
+            <div className="flex justify-center">
+              <KonsultasiButton message="Halo, saya ingin konsultasi custom." variant="solid" />
+            </div>
           </div>
         </div>
       </main>
