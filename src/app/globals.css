@@ -156,27 +156,6 @@ body {
   .dark .shadow-sleek {
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
   }
-  @utility font-display-name-light {
-    font-family: var(--font-montserrat);
-    font-size: clamp(24px, 8vw, 84px);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    font-weight: 200;
-  }
-  @utility font-display-name-heavy {
-    font-family: var(--font-montserrat);
-    font-size: clamp(24px, 8vw, 84px);
-    line-height: 1;
-    letter-spacing: -0.04em;
-    font-weight: 800;
-  }
-  @utility font-label-sm {
-    font-family: var(--font-montserrat);
-    font-size: 11px;
-    line-height: 1;
-    letter-spacing: 0.15em;
-    font-weight: 500;
-  }
   .glass-panel {
     backdrop-filter: blur(20px);
     background: rgba(26, 26, 26, 0.8);
@@ -213,4 +192,28 @@ body {
     0% { transform: scale(1); opacity: 0.6; }
     100% { transform: scale(1.7); opacity: 0; }
   }
+}
+
+@utility font-display-name-light {
+  font-family: var(--font-montserrat);
+  font-size: clamp(24px, 8vw, 84px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 200;
+}
+
+@utility font-display-name-heavy {
+  font-family: var(--font-montserrat);
+  font-size: clamp(24px, 8vw, 84px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+@utility font-label-sm {
+  font-family: var(--font-montserrat);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  font-weight: 500;
 }
