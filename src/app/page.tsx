@@ -136,8 +136,8 @@ export default function Home() {
 
   return (
     <div className="w-full" style={{ overflowX: 'clip' }}>
-      {/* Hero Background Section */}
-      <div className="relative w-full h-screen overflow-hidden">
+      {/* Hero Section */}
+      <div className="relative w-full h-[100dvh] min-h-[600px] flex flex-col justify-end pb-16 md:pb-24 bg-surface">
         {/* Background Video */}
         <div className="absolute inset-0 bg-surface">
           {/* Poster image always shown */}
@@ -175,11 +175,11 @@ export default function Home() {
         <Navbar />
 
         {/* Headline */}
-        <div className="absolute bottom-[8%] md:bottom-[5%] left-6 md:left-margin-desktop max-w-5xl z-10 pr-6">
-          <h1 className="font-headline-lg font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.3] drop-shadow-2xl mb-4 md:mb-6 max-w-4xl">
+        <div className="relative left-6 md:left-margin-desktop max-w-5xl z-10 pr-6 w-full mt-auto pt-32">
+          <h1 className="font-[family-name:var(--font-montserrat)] font-bold text-2xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.3] drop-shadow-2xl mb-4 md:mb-6 max-w-4xl">
             Solusi karoseri truck, repair body custom, dan service hydraulic system untuk kebutuhan operasional industri, logistik, serta distribusi perusahaan.
           </h1>
-          <p className="font-body-lg text-base sm:text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-lg leading-relaxed font-medium">
+          <p className="font-[family-name:var(--font-libre-franklin)] text-sm sm:text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-lg leading-relaxed font-medium">
             Spesialis dalam pembuatan karoseri truck meliputi box aluminium, box freezer, box besi, wing box, dump truck, dump truck three way, lube truck, fuel truck, truck tangki, water sprayer truck, hingga repair body custom dan service hydraulic system dengan standar pengerjaan yang terukur serta profesional.
           </p>
         </div>
