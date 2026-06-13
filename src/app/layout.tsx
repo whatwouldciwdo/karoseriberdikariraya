@@ -1,26 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Bebas_Neue } from "next/font/google";
+import { Montserrat, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
 const SITE_URL = "https://www.berdikariraya.com";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-montserrat",
+  weight: ["200", "300", "400", "500", "700", "800"],
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const libreFranklin = Libre_Franklin({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const bebasNeue = Bebas_Neue({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-bebas-neue",
+  variable: "--font-libre-franklin",
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -31,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Berdikari Raya Service",
   },
   description:
-    "Berdikari Raya Service — jasa karoseri truck terpercaya di Bekasi, JABODETABEK, dan Bandung. Melayani pembuatan fuel truck, dump truck, box aluminium, wing box, water sprayer, truck tangki, repair body, dan service hydraulic system sejak 2012.",
+    "Berdikari Raya Service — jasa karoseri truck terpercaya di Bekasi, JABODETABEK, dan Bandung. Melayani pembuatan fuel truck, dump truck, box aluminium, wing box, water sprayer, truck tangki, repair body, and service hydraulic system sejak 2012.",
   keywords: [
     "karoseri truck Bekasi",
     "jasa karoseri JABODETABEK",
@@ -125,16 +120,33 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${bebasNeue.variable} dark antialiased`}
+      className={`${montserrat.variable} ${libreFranklin.variable} antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-background text-on-surface selection:bg-secondary-container selection:text-white font-body-md overflow-x-hidden min-h-screen flex flex-col">
+      <body className="bg-background text-on-surface selection:bg-secondary-container selection:text-primary font-body-md overflow-x-hidden min-h-screen flex flex-col">
         {children}
         <WhatsAppFAB />
       </body>

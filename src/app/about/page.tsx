@@ -109,12 +109,12 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
-          <p className="font-label-md text-label-md text-secondary-container uppercase tracking-widest mb-4">Tentang Kami</p>
-          <h1 className="font-headline-lg text-4xl md:text-headline-lg text-white tracking-tight leading-[1.1] mb-6">
+          <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">Tentang Kami</p>
+          <h1 className="font-headline-lg text-4xl md:text-headline-lg text-primary tracking-tight leading-[1.1] mb-6">
             Spesialis Karoseri Kendaraan Niaga<br />di Bekasi
           </h1>
           <p className="font-body-lg text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            Lebih dari satu dekade melayani industri, logistik, konstruksi, dan distribusi di seluruh JABODETABEK dan Bandung — dengan standar kualitas tertinggi dan komitmen penuh pada kepuasan pelanggan.
+            Lebih dari satu dekade melayani industri, logistik, konstruksi, dan distribusi di seluruh JABODETABEK and Bandung — dengan standar kualitas tertinggi dan komitmen penuh pada kepuasan pelanggan.
           </p>
         </div>
       </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
               <div className="absolute -bottom-6 -right-4 md:-right-8 bg-surface-container-high border border-white/10 rounded-2xl p-6 shadow-sleek backdrop-blur-xl">
                 <div className="flex gap-8">
                   <div className="text-center">
-                    <p className="font-display-lg text-3xl text-secondary-container">10+</p>
+                    <p className="font-display-lg text-3xl text-primary">10+</p>
                     <p className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider mt-1">Tahun</p>
                   </div>
                   <div className="text-center">
@@ -155,21 +155,21 @@ export default function AboutPage() {
 
             <div className="flex flex-col space-y-6 md:space-y-8 mt-8 md:mt-0">
               <div>
-                <h2 className="font-headline-lg text-3xl md:text-4xl text-white mb-4">Siapa Kami?</h2>
-                <div className="w-16 h-1.5 bg-secondary-container rounded-full mb-8" />
+                <h2 className="font-headline-lg text-3xl md:text-4xl text-primary mb-4">Siapa Kami?</h2>
+                <div className="w-16 h-1.5 bg-primary rounded-full mb-8" />
                 <div className="space-y-5">
                   <p className="font-body-lg text-on-surface-variant leading-relaxed">
-                    <strong className="text-white font-semibold">Berdikari Raya Service</strong> adalah perusahaan jasa{" "}
-                    <strong className="text-white font-semibold">karoseri truk di JABODETABEK dan Bandung</strong> Kami melayani pembuatan dan perbaikan berbagai kebutuhan kendaraan niaga untuk sektor industri, logistik, konstruksi, dan distribusi.
+                    <strong className="text-primary font-semibold">Berdikari Raya Service</strong> adalah perusahaan jasa{" "}
+                    <strong className="text-primary font-semibold">karoseri truk di JABODETABEK dan Bandung</strong>. Kami melayani pembuatan dan perbaikan berbagai kebutuhan kendaraan niaga untuk sektor industri, logistik, konstruksi, dan distribusi.
                   </p>
                   <p className="font-body-lg text-on-surface-variant leading-relaxed">
                     Workshop kami yang berlokasi strategis di Bekasi dilengkapi dengan peralatan modern dan dioperasikan oleh tenaga mekanik berpengalaman yang terlatih untuk menghasilkan produk karoseri berkualitas tinggi, rapi, fungsional, dan sesuai spesifikasi pelanggan.
                   </p>
                   <p className="font-body-lg text-on-surface-variant leading-relaxed">
                     Dengan menangani{" "}
-                    <strong className="text-white font-semibold">karoseri box aluminium, box besi, wing box, dump truck, fuel truck, truck tangki, water sprayer truck</strong>, hingga{" "}
-                    <strong className="text-white font-semibold">repair body custom</strong> dan{" "}
-                    <strong className="text-white font-semibold">service hydraulic system</strong>, kami menjadi solusi satu pintu untuk semua kebutuhan kendaraan niaga Anda.
+                    <strong className="text-primary font-semibold">karoseri box aluminium, box besi, wing box, dump truck, fuel truck, truck tangki, water sprayer truck</strong>, hingga{" "}
+                    <strong className="text-primary font-semibold">repair body custom</strong> and{" "}
+                    <strong className="text-primary font-semibold">service hydraulic system</strong>, kami menjadi solusi satu pintu untuk semua kebutuhan kendaraan niaga Anda.
                   </p>
                 </div>
               </div>
@@ -178,10 +178,10 @@ export default function AboutPage() {
                   href="https://wa.me/6281291578404"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#25D366]/20 group"
+                  className="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-[#25D366] hover:text-white transition-all active:scale-95 shadow-lg hover:shadow-[#25D366]/20 border border-outline-variant/10 group cursor-pointer"
                 >
                   Konsultasi Sekarang
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform animate-bounce" />
                 </a>
               </div>
             </div>
@@ -190,26 +190,26 @@ export default function AboutPage() {
 
         {/* Values */}
         <section className="relative px-6 md:px-margin-desktop py-24 bg-surface-container-lowest border-t border-outline-variant/10 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 2px, transparent 0)', backgroundSize: '48px 48px' }} />
-          <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-secondary-container/15 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--color-on-background) 2px, transparent 0)', backgroundSize: '48px 48px' }} />
+          <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="relative z-10 max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="font-headline-lg text-3xl md:text-5xl text-white mb-4">Nilai-Nilai Kami</h2>
-              <div className="w-20 h-1.5 bg-gradient-to-r from-secondary-container to-primary rounded-full mx-auto" />
+              <h2 className="font-headline-lg text-3xl md:text-5xl text-primary mb-4">Nilai-Nilai Kami</h2>
+              <div className="w-20 h-1.5 bg-primary rounded-full mx-auto" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {values.map((val, idx) => (
                 <div
                   key={idx}
-                  className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-8 border border-white/5 hover:border-secondary-container/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-container/10 transition-all duration-500 group overflow-hidden"
+                  className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-8 border border-outline-variant/15 hover:border-primary/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 group overflow-hidden"
                 >
-                  <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="w-16 h-16 bg-surface-container-lowest/50 border border-white/10 group-hover:border-secondary-container/50 group-hover:bg-secondary-container/10 text-secondary-container rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:rotate-[10deg]">
+                  <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="w-16 h-16 bg-surface-container-lowest/50 border border-outline-variant/20 group-hover:border-primary/40 group-hover:bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:rotate-[10deg]">
                     <val.icon size={30} strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-headline-md text-xl text-white mb-3 group-hover:text-secondary-container transition-colors">{val.title}</h3>
+                  <h3 className="font-headline-md text-xl text-primary mb-3 group-hover:text-primary transition-colors">{val.title}</h3>
                   <p className="font-body-md text-on-surface-variant leading-relaxed">{val.desc}</p>
                 </div>
               ))}
@@ -219,31 +219,31 @@ export default function AboutPage() {
 
         {/* Visi & Misi */}
         <section className="relative px-6 md:px-margin-desktop py-24 border-t border-outline-variant/10 overflow-hidden">
-          <div className="absolute top-0 right-1/3 w-[400px] h-[400px] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-0 right-1/3 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
           <div className="max-w-5xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <h2 className="font-headline-lg text-3xl md:text-5xl text-white mb-4">Visi &amp; Misi</h2>
-              <div className="w-20 h-1.5 bg-gradient-to-r from-secondary-container to-primary rounded-full mx-auto" />
+              <h2 className="font-headline-lg text-3xl md:text-5xl text-primary mb-4">Visi &amp; Misi</h2>
+              <div className="w-20 h-1.5 bg-primary rounded-full mx-auto" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Visi */}
-              <div className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-10 border border-white/5 hover:border-secondary-container/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-container/10 transition-all duration-500 group overflow-hidden">
-                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="w-14 h-14 bg-secondary-container/10 border border-secondary-container/30 rounded-2xl flex items-center justify-center mb-6">
-                  <Target size={28} className="text-secondary-container" strokeWidth={1.5} />
+              <div className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-10 border border-outline-variant/15 hover:border-primary/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 group overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="w-14 h-14 bg-primary/5 border border-outline-variant/30 rounded-2xl flex items-center justify-center mb-6">
+                  <Target size={28} className="text-primary" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-headline-md text-2xl text-white mb-4 group-hover:text-secondary-container transition-colors">Visi</h3>
+                <h3 className="font-headline-md text-2xl text-primary mb-4 group-hover:text-primary transition-colors">Visi</h3>
                 <p className="font-body-lg text-on-surface-variant leading-relaxed">
                   Menghasilkan Produk Karoseri dengan Standar Kualitas Tinggi, Aman Digunakan Dalam Jangka Panjang dan Menjadikan Kepuasan Pelanggan Sebagai Standar Keberhasilan Perusahaan.
                 </p>
               </div>
               {/* Misi */}
-              <div className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-10 border border-white/5 hover:border-secondary-container/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-secondary-container/10 transition-all duration-500 group overflow-hidden">
-                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="w-14 h-14 bg-secondary-container/10 border border-secondary-container/30 rounded-2xl flex items-center justify-center mb-6">
-                  <Building2 size={28} className="text-secondary-container" strokeWidth={1.5} />
+              <div className="relative bg-surface-container-high/80 backdrop-blur-xl rounded-3xl p-10 border border-outline-variant/15 hover:border-primary/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 group overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="w-14 h-14 bg-primary/5 border border-outline-variant/30 rounded-2xl flex items-center justify-center mb-6">
+                  <Building2 size={28} className="text-primary" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-headline-md text-2xl text-white mb-4 group-hover:text-secondary-container transition-colors">Misi</h3>
+                <h3 className="font-headline-md text-2xl text-primary mb-4 group-hover:text-primary transition-colors">Misi</h3>
                 <p className="font-body-lg text-on-surface-variant leading-relaxed">
                   Menjadi Perusahaan Karoseri Terpercaya Yang Menghadirkan Kualitas Produk Yang Tangguh, Inovasi Berkelanjutan dan Layanan Profesional Untuk Mendukung Kesuksesan Bisnis Pelanggan.
                 </p>
@@ -255,22 +255,22 @@ export default function AboutPage() {
         {/* Location */}
         <section className="px-6 md:px-margin-desktop py-24 border-t border-outline-variant/10">
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-headline-md text-3xl text-white flex items-center gap-4 mb-8">
-              <div className="w-2 h-8 bg-secondary-container rounded-full" />
+            <h2 className="font-headline-md text-3xl text-primary flex items-center gap-4 mb-8">
+              <div className="w-2 h-8 bg-primary rounded-full" />
               Lokasi Workshop
             </h2>
-            <div className="flex items-start gap-4 bg-surface-container p-6 rounded-2xl border border-white/5 mb-8">
-              <MapPin className="text-secondary-container mt-1 flex-shrink-0" size={24} />
+            <div className="flex items-start gap-4 bg-surface-container-low p-6 rounded-2xl border border-outline-variant/15 mb-8">
+              <MapPin className="text-primary mt-1 flex-shrink-0" size={24} />
               <div>
                 <p className="font-body-lg text-on-surface-variant leading-relaxed">
                   Jalan Macem, No 27, RT 002/001, Cikiwul, Kecamatan Bantar Gebang, Kota Bekasi, Jawa Barat, 17152
                 </p>
-                <p className="font-body-md text-secondary-container mt-2">
+                <p className="font-body-md text-primary mt-2">
                   Senin – Jumat: 08.00 – 17.00 WIB | Sabtu: 08.00 – 15.00 WIB
                 </p>
               </div>
             </div>
-            <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-sleek border border-white/5 bg-surface-container-high group">
+            <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-sleek border border-outline-variant/15 bg-surface-container-high group">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.654854992524!2d106.98188331526362!3d-6.309322395431602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69922a945b6dbd%3A0xc3c5b8b5496d5a10!2sJl.%20Macem%20No.27%2C%20RT.002%2FRW.001%2C%20Cikiwul%2C%20Kec.%20Bantar%20Gebang%2C%20Kota%20Bks%2C%20Jawa%20Barat%2017152!5e0!3m2!1sen!2sid!4v1689000000000!5m2!1sen!2sid"
                 width="100%"

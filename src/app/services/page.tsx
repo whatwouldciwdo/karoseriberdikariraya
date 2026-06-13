@@ -164,8 +164,8 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
-          <p className="font-label-md text-label-md text-secondary-container uppercase tracking-widest mb-4">Layanan Kami</p>
-          <h1 className="font-headline-lg text-4xl md:text-headline-lg text-white tracking-tight leading-[1.1] mb-4">
+          <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">Layanan Kami</p>
+          <h1 className="font-headline-lg text-4xl md:text-headline-lg text-primary tracking-tight leading-[1.1] mb-4">
             Solusi Lengkap Karoseri<br />Kendaraan Niaga Bekasi
           </h1>
           <p className="font-body-lg text-lg text-on-surface-variant max-w-2xl leading-relaxed">
@@ -180,7 +180,7 @@ export default function ServicesPage() {
           {servicesList.map((service, idx) => (
             <div
               key={idx}
-              className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-white/5 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300"
+              className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-outline-variant/15 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300"
             >
               {/* Image */}
               <div className="h-52 relative overflow-hidden bg-surface-container">
@@ -193,14 +193,14 @@ export default function ServicesPage() {
                   className="object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent" />
-                <div className="absolute top-4 right-4 w-11 h-11 bg-secondary-container/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <service.icon className="text-white" size={20} />
+                <div className="absolute top-4 right-4 w-11 h-11 bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/20 rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <service.icon className="text-primary" size={20} />
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
-                <h2 className="font-headline-md text-xl text-white mb-3 group-hover:text-secondary-container transition-colors leading-tight">
+                <h2 className="font-headline-md text-xl text-primary mb-3 transition-colors leading-tight">
                   {service.title}
                 </h2>
                 <p className="font-body-md text-base text-on-surface-variant leading-relaxed mb-5 flex-1">
@@ -211,7 +211,7 @@ export default function ServicesPage() {
                 <ul className="flex flex-col gap-2 mb-6">
                   {service.features.map((f, i) => (
                     <li key={i} className="flex items-center gap-2 text-on-surface-variant text-sm">
-                      <CheckCircle size={14} className="text-secondary-container shrink-0" />
+                      <CheckCircle size={14} className="text-primary shrink-0" />
                       {f}
                     </li>
                   ))}
@@ -224,10 +224,10 @@ export default function ServicesPage() {
         </div>
 
         {/* CTA Bottom */}
-        <div className="mt-24 max-w-4xl mx-auto text-center bg-surface-container-high rounded-3xl p-12 border border-white/5 shadow-sleek relative overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="mt-24 max-w-4xl mx-auto text-center bg-surface-container-high rounded-3xl p-12 border border-outline-variant/15 shadow-sleek relative overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
           <div className="relative z-10">
-            <h2 className="font-headline-lg text-3xl md:text-5xl text-white mb-4">Tidak Ada di Daftar? Kami Bisa Custom!</h2>
+            <h2 className="font-headline-lg text-3xl md:text-5xl text-primary mb-4">Tidak Ada di Daftar? Kami Bisa Custom!</h2>
             <p className="font-body-lg text-on-surface-variant text-lg mb-8 max-w-xl mx-auto">
               Setiap bisnis punya kebutuhan yang berbeda. Tim kami siap berdiskusi dan merancang solusi karoseri custom sesuai spesifikasi operasional Anda — konsultasi gratis, tanpa komitmen.
             </p>

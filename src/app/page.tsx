@@ -176,7 +176,7 @@ export default function Home() {
 
         {/* Headline */}
         <div className="absolute bottom-[8%] md:bottom-[5%] left-6 md:left-margin-desktop max-w-5xl z-10 pr-6">
-          <h1 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.3] drop-shadow-2xl mb-4 md:mb-6 max-w-4xl">
+          <h1 className="font-headline-lg font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-[1.3] drop-shadow-2xl mb-4 md:mb-6 max-w-4xl">
             Solusi karoseri truck, repair body custom, dan service hydraulic system untuk kebutuhan operasional industri, logistik, serta distribusi perusahaan.
           </h1>
           <p className="font-body-lg text-base sm:text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-lg leading-relaxed font-medium">
@@ -204,10 +204,10 @@ export default function Home() {
           {/* Text Content Side */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-8">
             <div>
-              <h2 className="font-headline-lg text-4xl md:text-5xl lg:text-headline-lg text-white mb-4 md:mb-6">
+              <h2 className="font-headline-lg text-4xl md:text-5xl lg:text-headline-lg text-primary mb-4 md:mb-6">
                 Tentang Kami
               </h2>
-              <div className="w-16 md:w-20 h-1.5 bg-secondary-container rounded-full mb-6 md:mb-8"></div>
+              <div className="w-16 md:w-20 h-1.5 bg-primary rounded-full mb-6 md:mb-8"></div>
 
               <div className="space-y-6">
                 <p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">
@@ -234,7 +234,7 @@ export default function Home() {
             <span className="font-label-md text-[10px] sm:text-xs md:text-sm text-on-surface-variant uppercase tracking-wider">
               Tahun Pengalaman
             </span>
-            <span className="font-display-lg text-4xl sm:text-5xl md:text-headline-lg text-secondary-container">
+            <span className="font-display-lg text-4xl sm:text-5xl md:text-headline-lg text-primary">
               10+
             </span>
           </div>
@@ -267,8 +267,8 @@ export default function Home() {
         {/* Services / Layanan Section */}
         <section className="flex flex-col space-y-12">
           <div className="flex flex-col items-center text-center space-y-4">
-            <h2 className="font-headline-lg text-3xl md:text-5xl text-white">Layanan Produk Kami</h2>
-            <div className="w-16 md:w-24 h-1.5 bg-secondary-container rounded-full"></div>
+            <h2 className="font-headline-lg text-3xl md:text-5xl text-primary">Layanan Produk Kami</h2>
+            <div className="w-16 md:w-24 h-1.5 bg-primary rounded-full"></div>
             <p className="font-body-lg text-base md:text-lg text-on-surface-variant max-w-2xl px-4">
               Kami menyediakan berbagai macam pembuatan karoseri dan layanan perbaikan untuk mendukung kelancaran bisnis Anda.
             </p>
@@ -276,7 +276,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 w-full max-w-full">
             {servicesList.map((service, idx) => (
-              <div key={idx} className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-white/5 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300 cursor-pointer w-full">
+              <div key={idx} className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-outline-variant/15 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300 cursor-pointer w-full">
                 <div className="h-48 md:h-56 relative overflow-hidden bg-surface-container w-full">
                   <Image
                     src={service.img}
@@ -287,19 +287,19 @@ export default function Home() {
                     className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-secondary-container/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <service.icon className="text-white" size={20} />
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-primary/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <service.icon className="text-on-primary" size={20} />
                   </div>
                 </div>
                 <div className="p-5 md:p-6 flex flex-col flex-1 w-full">
-                  <h3 className="font-headline-md text-xl md:text-2xl text-white mb-2 md:mb-3 group-hover:text-secondary-container transition-colors leading-tight">{service.title}</h3>
+                  <h3 className="font-headline-md text-xl md:text-2xl text-primary mb-2 md:mb-3 group-hover:text-primary transition-colors leading-tight">{service.title}</h3>
                   <p className="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed line-clamp-3 mb-4 md:mb-6 flex-1">
                     {service.desc}
                   </p>
                   <ul className="flex flex-col gap-2 mb-6">
                     {service.features.map((f, i) => (
                       <li key={i} className="flex items-center gap-2 text-on-surface-variant text-xs md:text-sm">
-                        <CheckCircle size={14} className="text-secondary-container shrink-0" />
+                        <CheckCircle size={14} className="text-primary shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -314,8 +314,8 @@ export default function Home() {
         {/* Mitra & Klien Section */}
         <section className="flex flex-col space-y-12 pb-8 pt-16 border-t border-outline-variant/10 mt-32">
           <div className="flex flex-col items-center text-center space-y-4">
-            <h2 className="font-headline-md text-2xl md:text-4xl text-white">Telah Dipercaya Oleh</h2>
-            <div className="w-16 h-1 bg-secondary-container rounded-full"></div>
+            <h2 className="font-headline-md text-2xl md:text-4xl text-primary">Telah Dipercaya Oleh</h2>
+            <div className="w-16 h-1 bg-primary rounded-full"></div>
           </div>
           <div className="w-full relative overflow-hidden py-8">
             <LogoLoop
@@ -327,7 +327,7 @@ export default function Home() {
               hoverSpeed={15}
               scaleOnHover
               fadeOut
-              fadeOutColor="#0a0a0a"
+              fadeOutColor="var(--color-background)"
               ariaLabel="Mitra dan Klien Berdikari Raya"
             />
           </div>
@@ -336,34 +336,34 @@ export default function Home() {
         {/* Kenapa Memilih Kami Section */}
         <section className="relative flex flex-col space-y-16 bg-surface-container-lowest px-6 md:px-16 py-32 rounded-t-[3rem] mt-16 border-t border-outline-variant/10 overflow-hidden w-full">
           {/* Decorative Background Elements */}
-          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 2px, transparent 0)', backgroundSize: '48px 48px' }}></div>
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-secondary-container/20 rounded-full blur-[150px] pointer-events-none"></div>
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--color-on-background) 2px, transparent 0)', backgroundSize: '48px 48px' }}></div>
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
           <div className="relative z-10 flex flex-col items-center text-center space-y-6">
-            <h2 className="font-headline-lg text-3xl md:text-5xl text-white max-w-4xl leading-[1.2] font-bold tracking-wide">
+            <h2 className="font-headline-lg text-3xl md:text-5xl text-primary max-w-4xl leading-[1.2] font-bold tracking-wide">
               Kenapa Memilih Jasa Karoseri Berdikari Raya Service?
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-secondary-container to-primary rounded-full"></div>
+            <div className="w-24 h-1.5 bg-primary rounded-full"></div>
           </div>
 
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto w-full">
             {reasonsList.map((reason, idx) => (
-              <div key={idx} className="relative bg-gradient-to-b from-surface-container-high/80 to-surface-container-low/80 backdrop-blur-xl rounded-3xl p-10 flex flex-col items-center text-center border border-white/5 hover:border-secondary-container/30 hover:shadow-2xl hover:shadow-secondary-container/10 hover:-translate-y-3 transition-all duration-500 group overflow-hidden">
+              <div key={idx} className="relative bg-gradient-to-b from-surface-container-high/80 to-surface-container-low/80 backdrop-blur-xl rounded-3xl p-10 flex flex-col items-center text-center border border-outline-variant/15 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-3 transition-all duration-500 group overflow-hidden">
 
                 {/* Subtle top border highlight on hover */}
-                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Soft glow behind the icon */}
-                <div className="absolute top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-secondary-container/20 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                <div className="absolute top-12 left-1/2 -translate-x-1/2 w-32 h-32 bg-primary/5 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
                 {/* Icon Container */}
-                <div className="relative w-20 h-20 bg-surface-container-lowest/50 border border-white/10 group-hover:border-secondary-container/50 group-hover:bg-secondary-container/10 text-secondary-container rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-inner">
-                  <reason.icon size={36} strokeWidth={1.5} className="drop-shadow-lg group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all duration-500" />
+                <div className="relative w-20 h-20 bg-surface-container-lowest/50 border border-outline-variant/20 group-hover:border-primary/40 group-hover:bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:rotate-[10deg] group-hover:scale-110 shadow-inner">
+                  <reason.icon size={36} strokeWidth={1.5} className="drop-shadow-lg transition-all duration-500" />
                 </div>
 
                 {/* Text */}
-                <h3 className="font-headline-sm text-xl text-white/90 font-medium group-hover:text-white transition-colors duration-300 leading-relaxed">
+                <h3 className="font-headline-sm text-xl text-primary/90 font-medium group-hover:text-primary transition-colors duration-300 leading-relaxed">
                   {reason.text}
                 </h3>
               </div>
@@ -375,16 +375,16 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-16 pb-24 max-w-6xl mx-auto w-full pt-16">
           {/* Kantor Pusat */}
           <div className="flex flex-col space-y-8">
-            <h2 className="font-headline-md text-3xl text-white flex items-center gap-4">
-              <div className="w-2 h-8 bg-secondary-container rounded-full"></div>
+            <h2 className="font-headline-md text-3xl text-primary flex items-center gap-4">
+              <div className="w-2 h-8 bg-primary rounded-full"></div>
               Kantor Pusat
             </h2>
             <div className="flex flex-col space-y-6 text-on-surface-variant">
               <p className="font-body-md text-lg">
                 Senin - Jumat : 08:00 - 17:00, Sabtu: 08:00 - 15:00
               </p>
-              <div className="flex items-start gap-4 bg-surface-container p-6 rounded-2xl border border-white/5">
-                <MapPin className="text-secondary-container mt-1 flex-shrink-0" size={24} />
+              <div className="flex items-start gap-4 bg-surface-container-low p-6 rounded-2xl border border-outline-variant/15">
+                <MapPin className="text-primary mt-1 flex-shrink-0" size={24} />
                 <p className="font-body-md text-lg leading-relaxed">
                   Jalan Macem, No 27, RT 002/001, Cikiwul, Kecamatan Bantar Gebang, Kota Bekasi, Jawa Barat, 17152
                 </p>
@@ -394,40 +394,40 @@ export default function Home() {
 
           {/* Kontak Kami */}
           <div className="flex flex-col space-y-8">
-            <h2 className="font-headline-md text-3xl text-white flex items-center gap-4">
-              <div className="w-2 h-8 bg-secondary-container rounded-full"></div>
+            <h2 className="font-headline-md text-3xl text-primary flex items-center gap-4">
+              <div className="w-2 h-8 bg-primary rounded-full"></div>
               Kontak Kami
             </h2>
             <div className="flex flex-col space-y-4">
-              <a href="https://wa.me/6281291578404" target="_blank" rel="noreferrer" className="flex items-center gap-4 bg-surface-container hover:bg-surface-container-high p-4 rounded-2xl border border-white/5 transition-colors group">
+              <a href="https://wa.me/6281291578404" target="_blank" rel="noreferrer" className="flex items-center gap-4 bg-surface-container-low hover:bg-surface-container p-4 rounded-2xl border border-outline-variant/15 transition-colors group">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors shrink-0" style={{ background: 'rgba(37,211,102,0.12)' }}>
                   <svg viewBox="0 0 24 24" width="24" height="24" fill="#25d366" className="group-hover:scale-110 transition-transform"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-body-lg text-lg text-white group-hover:text-secondary-container transition-colors">Slamet Mulyono</span>
+                  <span className="font-body-lg text-lg text-primary group-hover:text-primary transition-colors">Slamet Mulyono</span>
                   <span className="font-body-md text-sm text-on-surface-variant">+62 812-9157-8404</span>
                 </div>
               </a>
-              <a href="mailto:slamet.mulyono@berdikariraya.com" className="flex items-center gap-4 bg-surface-container hover:bg-surface-container-high p-4 rounded-2xl border border-white/5 transition-colors group min-w-0">
-                <div className="w-12 h-12 bg-secondary-container/10 group-hover:bg-secondary-container rounded-full flex items-center justify-center transition-colors shrink-0">
-                  <Mail className="text-secondary-container group-hover:text-white" size={24} />
+              <a href="mailto:slamet.mulyono@berdikariraya.com" className="flex items-center gap-4 bg-surface-container-low hover:bg-surface-container p-4 rounded-2xl border border-outline-variant/15 transition-colors group min-w-0">
+                <div className="w-12 h-12 bg-primary/5 group-hover:bg-primary/10 rounded-full flex items-center justify-center transition-colors shrink-0">
+                  <Mail className="text-primary" size={24} />
                 </div>
-                <span className="font-body-lg text-base text-white group-hover:text-secondary-container transition-colors break-all min-w-0">slamet.mulyono@berdikariraya.com</span>
+                <span className="font-body-lg text-base text-primary group-hover:text-primary transition-colors break-all min-w-0">slamet.mulyono@berdikariraya.com</span>
               </a>
-              <a href="https://wa.me/6282113484129" target="_blank" rel="noreferrer" className="flex items-center gap-4 bg-surface-container hover:bg-surface-container-high p-4 rounded-2xl border border-white/5 transition-colors group min-w-0">
+              <a href="https://wa.me/6282113484129" target="_blank" rel="noreferrer" className="flex items-center gap-4 bg-surface-container-low hover:bg-surface-container p-4 rounded-2xl border border-outline-variant/15 transition-colors group min-w-0">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center transition-colors shrink-0" style={{ background: 'rgba(37,211,102,0.12)' }}>
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="#25d366" className="group-hover:scale-110 transition-transform"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="#25d366" className="group-hover:scale-110 transition-transform"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448{1.04}h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-body-lg text-lg text-white group-hover:text-secondary-container transition-colors">Dodo Prasetyo</span>
+                  <span className="font-body-lg text-lg text-primary group-hover:text-primary transition-colors">Dodo Prasetyo</span>
                   <span className="font-body-md text-sm text-on-surface-variant">+62 821-1348-4129</span>
                 </div>
               </a>
-              <a href="mailto:dodo.prasetyo@berdikariraya.com" className="flex items-center gap-4 bg-surface-container hover:bg-surface-container-high p-4 rounded-2xl border border-white/5 transition-colors group min-w-0">
-                <div className="w-12 h-12 bg-secondary-container/10 group-hover:bg-secondary-container rounded-full flex items-center justify-center transition-colors shrink-0">
-                  <Mail className="text-secondary-container group-hover:text-white" size={24} />
+              <a href="mailto:dodo.prasetyo@berdikariraya.com" className="flex items-center gap-4 bg-surface-container-low hover:bg-surface-container p-4 rounded-2xl border border-outline-variant/15 transition-colors group min-w-0">
+                <div className="w-12 h-12 bg-primary/5 group-hover:bg-primary/10 rounded-full flex items-center justify-center transition-colors shrink-0">
+                  <Mail className="text-primary" size={24} />
                 </div>
-                <span className="font-body-lg text-base text-white group-hover:text-secondary-container transition-colors break-all min-w-0">dodo.prasetyo@berdikariraya.com</span>
+                <span className="font-body-lg text-base text-primary group-hover:text-primary transition-colors break-all min-w-0">dodo.prasetyo@berdikariraya.com</span>
               </a>
             </div>
           </div>
@@ -435,11 +435,11 @@ export default function Home() {
 
         {/* Maps Section */}
         <section className="max-w-6xl mx-auto w-full pb-32">
-          <h2 className="font-headline-md text-3xl text-white flex items-center gap-4 mb-8">
-            <div className="w-2 h-8 bg-secondary-container rounded-full"></div>
+          <h2 className="font-headline-md text-3xl text-primary flex items-center gap-4 mb-8">
+            <div className="w-2 h-8 bg-primary rounded-full"></div>
             Kantor Kami
           </h2>
-          <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-sleek border border-white/5 bg-surface-container-high relative group">
+          <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-sleek border border-outline-variant/15 bg-surface-container-high relative group">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.654854992524!2d106.98188331526362!3d-6.309322395431602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69922a945b6dbd%3A0xc3c5b8b5496d5a10!2sJl.%20Macem%20No.27%2C%20RT.002%2FRW.001%2C%20Cikiwul%2C%20Kec.%20Bantar%20Gebang%2C%20Kota%20Bks%2C%20Jawa%20Barat%2017152!5e0!3m2!1sen!2sid!4v1689000000000!5m2!1sen!2sid"
               width="100%"

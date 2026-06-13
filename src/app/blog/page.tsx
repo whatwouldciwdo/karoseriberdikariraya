@@ -49,10 +49,10 @@ export default function BlogPage() {
       {/* Hero */}
       <div className="relative w-full min-h-[45vh] flex items-end overflow-hidden bg-surface">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-surface to-surface-container-high" />
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 2px, transparent 0)', backgroundSize: '48px 48px' }} />
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--color-on-background) 2px, transparent 0)', backgroundSize: '48px 48px' }} />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
-          <p className="font-label-md text-label-md text-secondary-container uppercase tracking-widest mb-4">News & Artikel</p>
-          <h1 className="font-headline-lg text-4xl md:text-headline-lg text-white tracking-tight leading-[1.1] mb-4">
+          <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">News & Artikel</p>
+          <h1 className="font-headline-lg text-4xl md:text-headline-lg text-primary tracking-tight leading-[1.1] mb-4">
             Tips, Panduan & Wawasan<br />Dunia Karoseri Truck
           </h1>
           <p className="font-body-lg text-lg text-on-surface-variant max-w-2xl leading-relaxed">
@@ -65,10 +65,10 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto">
           {/* Featured Post */}
           <div className="mb-16">
-            <p className="font-label-md text-xs text-secondary-container uppercase tracking-widest mb-6">Artikel Utama</p>
+            <p className="font-label-md text-xs text-primary uppercase tracking-widest mb-6">Artikel Utama</p>
             <Link
               href={`/blog/${featured.slug}`}
-              className="group grid grid-cols-1 md:grid-cols-2 gap-0 bg-surface-container-high rounded-3xl overflow-hidden border border-white/5 shadow-sleek hover:border-secondary-container/20 hover:-translate-y-1 transition-all duration-300"
+              className="group grid grid-cols-1 md:grid-cols-2 gap-0 bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/15 shadow-sleek hover:border-primary/20 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="h-64 md:h-auto relative overflow-hidden">
                 <Image
@@ -83,7 +83,7 @@ export default function BlogPage() {
               </div>
               <div className="flex flex-col justify-center p-8 md:p-12">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className={`font-label-md text-xs px-3 py-1 rounded-full ${categoryColors[featured.category]}`}>
+                  <span className={`font-label-md text-xs px-3 py-1 rounded-full ${featured.category === "Panduan" ? "bg-primary/5 text-primary border border-outline-variant/20" : categoryColors[featured.category]}`}>
                     {featured.category}
                   </span>
                   <span className="flex items-center gap-1 font-label-md text-xs text-on-surface-variant">
@@ -91,7 +91,7 @@ export default function BlogPage() {
                     {featured.readTime}
                   </span>
                 </div>
-                <h2 className="font-headline-md text-2xl md:text-3xl text-white mb-4 group-hover:text-secondary-container transition-colors leading-tight">
+                <h2 className="font-headline-md text-2xl md:text-3xl text-primary mb-4 group-hover:text-primary transition-colors leading-tight">
                   {featured.title}
                 </h2>
                 <p className="font-body-md text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
@@ -99,7 +99,7 @@ export default function BlogPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="font-label-md text-xs text-on-surface-variant">{featured.date}</span>
-                  <div className="flex items-center gap-2 text-secondary-container font-label-md text-sm group-hover:gap-4 transition-all">
+                  <div className="flex items-center gap-2 text-primary font-label-md text-sm group-hover:gap-4 transition-all">
                     <span>Baca Selengkapnya</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -114,10 +114,10 @@ export default function BlogPage() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                className={`font-label-md text-sm px-4 py-2 rounded-full border transition-all ${
+                className={`font-label-md text-sm px-4 py-2 rounded-full border transition-all cursor-pointer ${
                   cat === "Semua"
-                    ? "bg-secondary-container text-white border-secondary-container"
-                    : "border-outline-variant/30 text-on-surface-variant hover:border-secondary-container hover:text-secondary-container"
+                    ? "bg-primary text-on-primary border-primary shadow-sm"
+                    : "border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary"
                 }`}
               >
                 {cat}
@@ -131,7 +131,7 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden border border-white/5 shadow-sleek hover:border-secondary-container/20 hover:-translate-y-2 transition-all duration-300"
+                className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden border border-outline-variant/15 shadow-sleek hover:border-primary/20 hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="h-48 relative overflow-hidden">
                   <Image
@@ -143,7 +143,7 @@ export default function BlogPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent" />
                   <div className="absolute top-4 left-4">
-                    <span className={`font-label-md text-xs px-3 py-1 rounded-full backdrop-blur-md ${categoryColors[post.category]}`}>
+                    <span className={`font-label-md text-xs px-3 py-1 rounded-full backdrop-blur-md ${post.category === "Panduan" ? "bg-primary/5 text-primary border border-outline-variant/20" : categoryColors[post.category]}`}>
                       {post.category}
                     </span>
                   </div>
@@ -158,13 +158,13 @@ export default function BlogPage() {
                       {post.readTime}
                     </span>
                   </div>
-                  <h2 className="font-headline-sm text-lg text-white mb-3 group-hover:text-secondary-container transition-colors leading-tight line-clamp-2">
+                  <h2 className="font-headline-sm text-lg text-primary mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2">
                     {post.title}
                   </h2>
                   <p className="font-body-md text-sm text-on-surface-variant leading-relaxed line-clamp-3 flex-1 mb-5">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-2 text-secondary-container font-label-md text-xs uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
+                  <div className="flex items-center gap-2 text-primary font-label-md text-xs uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
                     <span>Baca Artikel</span>
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -174,16 +174,16 @@ export default function BlogPage() {
           </div>
 
           {/* Newsletter CTA */}
-          <div className="mt-24 bg-surface-container-high rounded-3xl p-10 md:p-16 border border-white/5 shadow-sleek relative overflow-hidden text-center">
-            <div className="absolute top-0 left-1/3 w-[500px] h-[300px] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="mt-24 bg-surface-container-high rounded-3xl p-10 md:p-16 border border-outline-variant/15 shadow-sleek relative overflow-hidden text-center">
+            <div className="absolute top-0 left-1/3 w-[500px] h-[300px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
             <div className="relative z-10">
-              <h2 className="font-headline-lg text-3xl md:text-4xl text-white mb-4">Butuh Konsultasi Karoseri?</h2>
+              <h2 className="font-headline-lg text-3xl md:text-4xl text-primary mb-4">Butuh Konsultasi Karoseri?</h2>
               <p className="font-body-lg text-on-surface-variant max-w-xl mx-auto mb-8">
                 Hubungi tim ahli kami untuk mendapatkan saran dan estimasi harga karoseri yang sesuai kebutuhan bisnis Anda—gratis dan tanpa komitmen.
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-label-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#25D366]/20 group"
+                className="inline-flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-[#25D366] hover:text-white transition-all active:scale-95 shadow-lg hover:shadow-[#25D366]/20 border border-outline-variant/10 group cursor-pointer"
               >
                 Hubungi Kami
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
