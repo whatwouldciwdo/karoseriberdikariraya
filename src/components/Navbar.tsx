@@ -59,9 +59,14 @@ export default function Navbar() {
             style={{ width: "auto" }}
             priority
           />
-          <span className="font-bold text-on-primary text-sm md:text-base tracking-wider whitespace-nowrap select-none shrink-0 font-nav-ui">
-            BERDIKARI RAYA
-          </span>
+          <div className="flex items-baseline gap-1.5 select-none shrink-0 uppercase">
+            <span className="font-extralight tracking-[0.18em] text-on-primary text-sm md:text-base font-label-md">
+              BERDIKARI
+            </span>
+            <span className="font-extrabold tracking-[0.04em] text-on-primary text-sm md:text-base font-label-md">
+              RAYA
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-3 shrink-0">
           <ThemeToggle />

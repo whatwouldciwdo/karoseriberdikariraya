@@ -73,9 +73,9 @@
   --color-on-error: var(--color-on-error);
   --color-on-error-container: var(--color-on-error-container);
 
-  --radius-DEFAULT: 1rem;
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
   --radius-full: 9999px;
 
   --spacing-unit: 8px;
@@ -151,7 +151,31 @@ body {
 
 @layer utilities {
   .shadow-sleek {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .dark .shadow-sleek {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  @utility font-display-name-light {
+    font-family: var(--font-montserrat);
+    font-size: clamp(24px, 8vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 200;
+  }
+  @utility font-display-name-heavy {
+    font-family: var(--font-montserrat);
+    font-size: clamp(24px, 8vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+  }
+  @utility font-label-sm {
+    font-family: var(--font-montserrat);
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.15em;
+    font-weight: 500;
   }
   .glass-panel {
     backdrop-filter: blur(20px);

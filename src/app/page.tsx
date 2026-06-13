@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
   Fuel, Droplets, CloudRain, Package, Box, Truck, Hammer, Replace, Cylinder, Snowflake, Wrench, Settings,
-  UserCheck, CircleDollarSign, ShieldCheck, Zap, HardHat, MapPin, Phone, Mail, ArrowRight, ArrowDown, CheckCircle
+  UserCheck, CircleDollarSign, ShieldCheck, Zap, HardHat, MapPin, Phone, Mail, ArrowRight, ArrowDown, CheckCircle, Check
 } from "lucide-react";
 import LogoLoopBase from "@/components/LogoLoop";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -276,7 +276,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 w-full max-w-full">
             {servicesList.map((service, idx) => (
-              <div key={idx} className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-outline-variant/15 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300 cursor-pointer w-full">
+              <div key={idx} className="group flex flex-col bg-surface-container-high rounded-xl overflow-hidden shadow-sleek border border-outline-variant/15 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300 cursor-pointer w-full">
                 <div className="h-48 md:h-56 relative overflow-hidden bg-surface-container w-full">
                   <Image
                     src={service.img}
@@ -287,19 +287,19 @@ export default function Home() {
                     className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
-                  <div className="absolute top-4 right-4 w-10 h-10 bg-primary/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <service.icon className="text-on-primary" size={20} />
+                  <div className="absolute top-4 right-4 w-10 h-10 bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/20 rounded-full flex items-center justify-center shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <service.icon className="text-primary" size={18} />
                   </div>
                 </div>
-                <div className="p-5 md:p-6 flex flex-col flex-1 w-full">
-                  <h3 className="font-headline-md text-xl md:text-2xl text-primary mb-2 md:mb-3 group-hover:text-primary transition-colors leading-tight">{service.title}</h3>
+                <div className="p-6 md:p-7 flex flex-col flex-1 w-full">
+                  <h3 className="font-headline-md font-semibold text-base md:text-lg text-primary uppercase tracking-wider mb-3 leading-tight">{service.title}</h3>
                   <p className="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed line-clamp-3 mb-4 md:mb-6 flex-1">
                     {service.desc}
                   </p>
                   <ul className="flex flex-col gap-2 mb-6">
                     {service.features.map((f, i) => (
                       <li key={i} className="flex items-center gap-2 text-on-surface-variant text-xs md:text-sm">
-                        <CheckCircle size={14} className="text-primary shrink-0" />
+                        <Check size={14} className="text-primary shrink-0" />
                         {f}
                       </li>
                     ))}

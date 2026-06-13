@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import {
   Fuel, Droplets, CloudRain, Package, Box, Truck, Hammer, Replace, Cylinder, Snowflake, Wrench, Settings,
-  ArrowRight, CheckCircle
+  ArrowRight, CheckCircle, Check
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -180,7 +180,7 @@ export default function ServicesPage() {
           {servicesList.map((service, idx) => (
             <div
               key={idx}
-              className="group flex flex-col bg-surface-container-high rounded-2xl overflow-hidden shadow-sleek border border-outline-variant/15 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300"
+              className="group flex flex-col bg-surface-container-high rounded-xl overflow-hidden shadow-sleek border border-outline-variant/15 hover:-translate-y-2 hover:bg-surface-container-highest transition-all duration-300"
             >
               {/* Image */}
               <div className="h-52 relative overflow-hidden bg-surface-container">
@@ -199,11 +199,11 @@ export default function ServicesPage() {
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col flex-1">
-                <h2 className="font-headline-md text-xl text-primary mb-3 transition-colors leading-tight">
+              <div className="p-7 md:p-8 flex flex-col flex-1">
+                <h2 className="font-headline-md font-semibold text-base md:text-lg text-primary uppercase tracking-wider mb-3 leading-tight">
                   {service.title}
                 </h2>
-                <p className="font-body-md text-base text-on-surface-variant leading-relaxed mb-5 flex-1">
+                <p className="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed mb-5 flex-1">
                   {service.desc}
                 </p>
 
@@ -211,7 +211,7 @@ export default function ServicesPage() {
                 <ul className="flex flex-col gap-2 mb-6">
                   {service.features.map((f, i) => (
                     <li key={i} className="flex items-center gap-2 text-on-surface-variant text-sm">
-                      <CheckCircle size={14} className="text-primary shrink-0" />
+                      <Check size={14} className="text-primary shrink-0" />
                       {f}
                     </li>
                   ))}

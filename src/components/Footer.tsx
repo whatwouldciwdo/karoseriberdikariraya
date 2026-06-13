@@ -22,7 +22,17 @@ export default function Footer() {
               />
             </div>
             <div className="flex flex-col space-y-2 text-on-surface-variant font-body-lg">
-              <p className="text-primary font-semibold tracking-wide font-label-md">BERDIKARI RAYA SERVICE</p>
+              <div className="flex items-baseline gap-1.5 uppercase font-label-md">
+                <span className="font-extralight tracking-[0.15em] text-primary text-base">
+                  BERDIKARI
+                </span>
+                <span className="font-extrabold tracking-[0.04em] text-primary text-base">
+                  RAYA
+                </span>
+                <span className="font-extralight tracking-[0.15em] text-secondary text-xs ml-1">
+                  SERVICE
+                </span>
+              </div>
               <p className="leading-relaxed">Solusi Terpercaya Karoseri, Repair, Body Custom, dan Hydraulic System.</p>
             </div>
           </div>
