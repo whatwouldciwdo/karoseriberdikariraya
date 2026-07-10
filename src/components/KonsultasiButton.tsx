@@ -35,7 +35,7 @@ export default function KonsultasiButton({ message = "Halo, saya ingin konsultas
             target="_blank"
             rel="noreferrer"
             onClick={() => setIsOpen(false)}
-            className="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-sm hover:bg-[#25D366] hover:text-white transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-[#25D366]/20 group w-full sm:w-auto border border-outline-variant/10 cursor-pointer"
+            className="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-md text-btn hover:bg-[#1ebe5a] transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-[#25D366]/30 group w-full sm:w-auto border border-outline-variant/10 cursor-pointer"
           >
             Konsultasi dengan Slamet
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -45,7 +45,7 @@ export default function KonsultasiButton({ message = "Halo, saya ingin konsultas
             target="_blank"
             rel="noreferrer"
             onClick={() => setIsOpen(false)}
-            className="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-sm hover:bg-[#25D366] hover:text-white transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-[#25D366]/20 group w-full sm:w-auto border border-outline-variant/10 cursor-pointer"
+            className="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-md text-btn hover:bg-[#1ebe5a] transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-[#25D366]/30 group w-full sm:w-auto border border-outline-variant/10 cursor-pointer"
           >
             Konsultasi dengan Dodo
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -53,30 +53,30 @@ export default function KonsultasiButton({ message = "Halo, saya ingin konsultas
         </div>
       );
     }
-
+ 
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-[#25D366] hover:text-white transition-all active:scale-95 flex items-center gap-2 group shadow-lg hover:shadow-[#25D366]/20 w-fit border border-outline-variant/10 cursor-pointer"
+        className="bg-[#25D366] text-white px-8 py-4 rounded-full font-label-md text-btn hover:bg-[#1ebe5a] transition-all active:scale-95 flex items-center gap-2 group shadow-lg hover:shadow-[#25D366]/30 w-fit border border-outline-variant/10 cursor-pointer"
       >
         Konsultasi Sekarang
         <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
       </button>
     );
   }
-
+ 
   // Variant text
   if (isOpen) {
     return (
       <div className="flex flex-col gap-2 mt-auto">
-        <span className="text-[10px] md:text-xs text-on-surface-variant font-medium">Konsultasi Dengan:</span>
+        <span className="text-btn text-on-surface-variant font-medium">Konsultasi Dengan:</span>
         <div className="flex items-center gap-3">
           <a
             href={href1}
             target="_blank"
             rel="noreferrer"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-1 font-label-md text-xs uppercase tracking-wider text-primary hover:text-[#25D366] transition-colors group/link cursor-pointer"
+            className="flex items-center gap-1 font-label-md text-btn uppercase tracking-wider text-[#25D366] hover:text-[#19a94f] transition-all group/link cursor-pointer"
           >
             Slamet
             <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
@@ -87,7 +87,7 @@ export default function KonsultasiButton({ message = "Halo, saya ingin konsultas
             target="_blank"
             rel="noreferrer"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-1 font-label-md text-xs uppercase tracking-wider text-primary hover:text-[#25D366] transition-colors group/link cursor-pointer"
+            className="flex items-center gap-1 font-label-md text-btn uppercase tracking-wider text-[#25D366] hover:text-[#19a94f] transition-all group/link cursor-pointer"
           >
             Dodo
             <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
@@ -96,11 +96,11 @@ export default function KonsultasiButton({ message = "Halo, saya ingin konsultas
       </div>
     );
   }
-
+ 
   return (
     <button
       onClick={(e) => { e.preventDefault(); setIsOpen(true); }}
-      className="flex items-center gap-2 font-label-md text-xs md:text-sm uppercase tracking-wider mt-auto group-hover:gap-4 transition-all w-fit cursor-pointer text-primary hover:text-[#25D366]"
+      className="flex items-center gap-2 font-label-md text-btn uppercase tracking-wider mt-auto group-hover:gap-4 transition-all w-fit cursor-pointer text-[#25D366] hover:text-[#19a94f]"
     >
       <span>Konsultasi Sekarang</span>
       <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

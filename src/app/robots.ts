@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+const SITE_URL = "https://karoseriberdikariraya.com";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -9,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://www.berdikariraya.com/sitemap.xml",
-    host: "https://www.berdikariraya.com",
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

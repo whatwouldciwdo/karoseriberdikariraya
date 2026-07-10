@@ -9,17 +9,19 @@ import Image from "next/image";
 import { blogPosts } from "@/data/blog";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export function generateMetadata({ params }: Props): Metadata {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+const SITE_URL = "https://karoseriberdikariraya.com";
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return { title: "Artikel Tidak Ditemukan" };
   }
 
-  const SITE_URL = "https://www.berdikariraya.com";
   const url = `${SITE_URL}/blog/${post.slug}`;
 
   return {
@@ -37,8 +39,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BlogDetail({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default async function BlogDetail({ params }: Props) {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
@@ -63,24 +66,24 @@ export default function BlogDetail({ params }: Props) {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm font-label-md text-on-surface-variant mb-8">
+          <div className="flex items-center gap-2 text-btn font-label-md text-on-surface-variant mb-8">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight size={14} />
             <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
             <ChevronRight size={14} />
             <span className="text-primary truncate">{post.category}</span>
           </div>
-
+ 
           {/* Title & Meta */}
           <div className="mb-10">
-            <span className="inline-block px-3 py-1 bg-primary/5 text-primary border border-outline-variant/25 rounded-full font-label-md text-xs uppercase tracking-wider mb-6">
+            <span className="inline-block px-3 py-1 bg-primary/5 text-primary border border-outline-variant/25 rounded-full font-label-md text-btn uppercase tracking-wider mb-6">
               {post.category}
             </span>
-            <h1 className="font-headline-lg text-3xl md:text-5xl text-primary tracking-tight leading-[1.2] mb-8">
+            <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.2] mb-8">
               {post.title}
             </h1>
             
-            <div className="flex flex-wrap items-center gap-6 text-sm font-label-md text-on-surface-variant">
+            <div className="flex flex-wrap items-center gap-6 text-btn font-label-md text-on-surface-variant">
               <div className="flex items-center gap-2">
                 <Calendar size={16} className="text-primary" />
                 {post.date}
@@ -112,9 +115,9 @@ export default function BlogDetail({ params }: Props) {
           {/* Article Content */}
           <article className="prose prose-lg max-w-3xl mx-auto
             prose-headings:font-headline-md prose-headings:text-primary prose-headings:font-normal
-            prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-            prose-h3:text-xl prose-h3:text-primary prose-h3:mt-8
-            prose-p:font-body-md prose-p:text-on-surface-variant prose-p:leading-relaxed prose-p:mb-6
+            prose-h2:text-heading prose-h2:mt-12 prose-h2:mb-6
+            prose-h3:text-heading prose-h3:text-primary prose-h3:mt-8
+            prose-p:font-body-md prose-p:text-body prose-p:text-on-surface-variant prose-p:leading-relaxed prose-p:mb-6
             prose-a:text-primary hover:prose-a:text-secondary prose-a:transition-colors
             prose-strong:text-primary prose-strong:font-semibold
             prose-ul:list-disc prose-ul:pl-6 prose-ul:text-on-surface-variant prose-ul:mb-8
@@ -128,19 +131,19 @@ export default function BlogDetail({ params }: Props) {
           <div className="max-w-3xl mx-auto mt-16 pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-6">
             <Link 
               href="/blog"
-              className="group flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors font-label-md text-sm uppercase tracking-wider cursor-pointer"
+              className="group flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors font-label-md text-btn uppercase tracking-wider cursor-pointer"
             >
               <div className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 transition-colors">
                 <ArrowLeft size={16} />
               </div>
               Kembali ke Blog
             </Link>
-
+ 
             <a 
               href="https://wa.me/6281291578404"
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-3 bg-primary text-on-primary rounded-full font-label-md text-sm shadow-lg hover:bg-[#25D366] hover:text-white hover:shadow-[#25D366]/20 transition-all active:scale-95 border border-outline-variant/10 cursor-pointer"
+              className="px-6 py-3 bg-[#25D366] text-white rounded-full font-label-md text-btn shadow-lg hover:bg-[#1ebe5a] hover:shadow-[#25D366]/30 transition-all active:scale-95 border border-outline-variant/10 cursor-pointer"
             >
               Konsultasi Proyek Karoseri
             </a>
@@ -152,10 +155,10 @@ export default function BlogDetail({ params }: Props) {
       <section className="bg-surface-container-lowest py-20 px-6 md:px-margin-desktop border-t border-outline-variant/10">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="font-headline-md text-3xl text-primary mb-4">Baca Juga</h2>
+            <h2 className="font-headline-md text-heading text-primary mb-4">Baca Juga</h2>
             <div className="w-16 h-1.5 bg-primary rounded-full" />
           </div>
-
+ 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
             {relatedPosts.map((rel) => (
               <Link
@@ -172,19 +175,19 @@ export default function BlogDetail({ params }: Props) {
                     className="object-cover opacity-75 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="font-label-md text-xs px-3 py-1 bg-surface-container-high/80 text-primary border border-outline-variant/20 backdrop-blur-md rounded-full">
+                    <span className="font-label-md text-btn px-3 py-1 bg-surface-container-high/80 text-primary border border-outline-variant/20 backdrop-blur-md rounded-full">
                       {rel.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-headline-sm text-lg text-primary mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="font-headline-sm text-heading text-primary mb-3 group-hover:text-primary transition-colors line-clamp-2">
                     {rel.title}
                   </h3>
-                  <p className="font-body-md text-sm text-on-surface-variant line-clamp-2 mb-4 flex-1">
+                  <p className="font-body-md text-body text-on-surface-variant line-clamp-2 mb-4 flex-1">
                     {rel.excerpt}
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-label-md text-xs uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
+                  <div className="flex items-center gap-2 text-primary font-label-md text-btn uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
                     <span>Baca Artikel</span>
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </div>

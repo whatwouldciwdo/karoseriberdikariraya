@@ -1,9 +1,33 @@
 import type { MetadataRoute } from "next";
+import { services } from "@/data/services";
 
-const SITE_URL = "https://www.berdikariraya.com";
+const SITE_URL = "https://karoseriberdikariraya.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
+
+  const serviceDetailPages: MetadataRoute.Sitemap = [
+    // Halaman service dedicated (hydraulic)
+    {
+      url: `${SITE_URL}/services/instalasi-hydraulic-system-truck`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/services/service-hydraulic-system-truck`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    // Halaman service data-driven
+    ...services.map((s) => ({
+      url: `${SITE_URL}/services/${s.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
 
   return [
     {
@@ -18,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    ...serviceDetailPages,
     {
       url: `${SITE_URL}/about`,
       lastModified: now,
@@ -29,6 +54,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/portfolio`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${SITE_URL}/blog`,

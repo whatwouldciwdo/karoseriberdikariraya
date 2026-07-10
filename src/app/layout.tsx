@@ -3,7 +3,7 @@ import { Montserrat, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
-const SITE_URL = "https://www.berdikariraya.com";
+const SITE_URL = "https://karoseriberdikariraya.com";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -120,27 +120,11 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${montserrat.variable} ${libreFranklin.variable} antialiased`}
+      className={`${montserrat.variable} ${libreFranklin.variable} antialiased dark`}
       suppressHydrationWarning
     >
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {}
-              })();
-            `
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

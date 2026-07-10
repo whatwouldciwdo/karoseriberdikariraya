@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
-const SITE_URL = "https://www.berdikariraya.com";
+const SITE_URL = "https://karoseriberdikariraya.com";
 
 const metaTitle = "Hubungi Kami | Konsultasi Karoseri Truck Gratis - Bekasi & JABODETABEK";
 const metaDesc =
@@ -142,11 +142,11 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
-          <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">Hubungi Kami</p>
-          <h1 className="font-headline-lg text-4xl md:text-headline-lg text-primary tracking-tight leading-[1.1] mb-4">
+          <p className="font-label-md text-btn text-primary uppercase tracking-widest mb-4">Hubungi Kami</p>
+          <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.1] mb-4">
             Konsultasi Karoseri Gratis,<br />Jawab dalam 1x24 Jam
           </h1>
-          <p className="font-body-lg text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          <p className="font-body-lg text-body text-on-surface-variant max-w-2xl leading-relaxed">
             Ada proyek karoseri yang ingin Anda diskusikan? Hubungi tim kami langsung — kami siap memberikan saran teknis, rekomendasi material, dan estimasi harga tanpa biaya apapun.
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function ContactPage() {
         <section className="px-6 md:px-margin-desktop py-20 md:py-28">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="font-headline-lg text-3xl md:text-4xl text-primary mb-4">Konsultasi Sekarang</h2>
+              <h2 className="font-headline-lg text-heading text-primary mb-4">Konsultasi Sekarang</h2>
               <div className="w-20 h-1.5 bg-primary rounded-full mx-auto" />
             </div>
 
@@ -178,11 +178,11 @@ export default function ContactPage() {
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider mb-1">{m.label}</p>
-                    <p className="font-headline-sm text-primary text-base md:text-lg mb-1 break-all md:break-words">{m.value}</p>
-                    <p className="font-body-md text-on-surface-variant text-sm break-words">{m.sub}</p>
+                    <p className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider mb-1">{m.label}</p>
+                    <p className="font-headline-sm text-primary text-body mb-1 break-all md:break-words">{m.value}</p>
+                    <p className="font-body-md text-on-surface-variant text-btn break-words">{m.sub}</p>
                   </div>
-                  <div className="flex items-center gap-1 text-primary text-xs font-label-md mt-1 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                  <div className="flex items-center gap-1 text-primary text-btn font-label-md mt-1 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
                     <span>{m.cta}</span>
                     <ArrowRight size={14} />
                   </div>
@@ -194,22 +194,22 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Form */}
               <div className="bg-surface-container-high rounded-3xl p-8 border border-outline-variant/15 shadow-sleek">
-                <h2 className="font-headline-md text-2xl text-primary mb-2">Kirim Pesan</h2>
-                <p className="font-body-md text-on-surface-variant mb-8">Isi form di bawah dan kami akan menghubungi Anda via WhatsApp.</p>
+                <h2 className="font-headline-md text-heading text-primary mb-2">Kirim Pesan</h2>
+                <p className="font-body-md text-body text-on-surface-variant mb-8">Isi form di bawah dan kami akan menghubungi Anda via WhatsApp.</p>
 
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-16 text-center">
                     <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mb-4">
                       <CheckCircle size={32} className="text-emerald-500" />
                     </div>
-                    <h3 className="font-headline-md text-xl text-primary mb-2">Pesan Terkirim!</h3>
-                    <p className="font-body-md text-on-surface-variant">Tim kami akan segera menghubungi Anda.</p>
+                    <h3 className="font-headline-md text-heading text-primary mb-2">Pesan Terkirim!</h3>
+                    <p className="font-body-md text-body text-on-surface-variant">Tim kami akan segera menghubungi Anda.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider block mb-2">Nama Lengkap *</label>
+                        <label className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider block mb-2">Nama Lengkap *</label>
                         <input
                           type="text"
                           required
@@ -220,7 +220,7 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <label className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider block mb-2">No. Telepon *</label>
+                        <label className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider block mb-2">No. Telepon *</label>
                         <input
                           type="tel"
                           required
@@ -232,7 +232,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <label className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider block mb-2">Email</label>
+                      <label className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider block mb-2">Email</label>
                       <input
                         type="email"
                         value={formData.email}
@@ -242,7 +242,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider block mb-2">Layanan yang Dibutuhkan</label>
+                      <label className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider block mb-2">Layanan yang Dibutuhkan</label>
                       <select
                         value={formData.service}
                         onChange={e => setFormData({ ...formData, service: e.target.value })}
@@ -265,7 +265,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider block mb-2">Pesan / Detail Kebutuhan *</label>
+                      <label className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider block mb-2">Pesan / Detail Kebutuhan *</label>
                       <textarea
                         required
                         rows={5}
@@ -277,7 +277,7 @@ export default function ContactPage() {
                     </div>
                     <button
                       type="submit"
-                      className="flex items-center justify-center gap-3 bg-primary text-on-primary py-4 rounded-full font-label-md text-label-md hover:bg-[#25D366] hover:text-white transition-all active:scale-95 shadow-lg hover:shadow-[#25D366]/20 border border-outline-variant/10 w-full group cursor-pointer"
+                      className="flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-full font-label-md text-btn hover:bg-[#1ebe5a] transition-all active:scale-95 shadow-lg hover:shadow-[#25D366]/30 border border-outline-variant/10 w-full group cursor-pointer"
                     >
                       <MessageCircle size={20} />
                       Kirim via WhatsApp
@@ -291,7 +291,7 @@ export default function ContactPage() {
               <div className="flex flex-col gap-8">
                 {/* Office Info */}
                 <div className="bg-surface-container-high rounded-3xl p-8 border border-outline-variant/15">
-                  <h3 className="font-headline-md text-xl text-primary mb-6 flex items-center gap-3">
+                  <h3 className="font-headline-md text-heading text-primary mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-primary rounded-full" />
                     Kantor & Workshop
                   </h3>
@@ -301,7 +301,7 @@ export default function ContactPage() {
                         <MapPin size={20} className="text-primary" />
                       </div>
                       <div>
-                        <p className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider mb-1">Alamat</p>
+                        <p className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider mb-1">Alamat</p>
                         <p className="font-body-md text-primary leading-relaxed">
                           Jalan Macem, No 27, RT 002/001, Cikiwul, Kecamatan Bantar Gebang, Kota Bekasi, Jawa Barat, 17152
                         </p>
@@ -312,7 +312,7 @@ export default function ContactPage() {
                         <Clock size={20} className="text-primary" />
                       </div>
                       <div>
-                        <p className="font-label-md text-xs text-on-surface-variant uppercase tracking-wider mb-1">Jam Operasional</p>
+                        <p className="font-label-md text-btn text-on-surface-variant uppercase tracking-wider mb-1">Jam Operasional</p>
                         <p className="font-body-md text-primary">Senin – Jumat: 08.00 – 17.00 WIB</p>
                         <p className="font-body-md text-primary">Sabtu: 08.00 – 15.00 WIB</p>
                         <p className="font-body-md text-on-surface-variant">Minggu: Tutup</p>
@@ -339,15 +339,14 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
         {/* FAQ */}
         <section className="px-6 md:px-margin-desktop py-24 bg-surface-container-lowest border-t border-outline-variant/10">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="font-headline-lg text-3xl md:text-4xl text-primary mb-4">Pertanyaan Umum</h2>
+              <h2 className="font-headline-lg text-heading text-primary mb-4">Pertanyaan Umum</h2>
               <div className="w-20 h-1.5 bg-primary rounded-full mx-auto" />
             </div>
-
+ 
             <div className="flex flex-col gap-4">
               {faqs.map((faq, idx) => (
                 <div
@@ -358,7 +357,7 @@ export default function ContactPage() {
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                     className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
                   >
-                    <span className="font-headline-sm text-base text-primary">{faq.q}</span>
+                    <span className="font-headline-sm text-body text-primary">{faq.q}</span>
                     <div className="w-8 h-8 bg-primary/5 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300">
                       <ArrowRight size={16} className={`text-primary transition-transform duration-300 ${openFaq === idx ? "-rotate-90" : ""}`} />
                     </div>
