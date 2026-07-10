@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI / vibe-code artifacts
+AGENTS.md
+CLAUDE.md
+REVISI-UI.md
+.cline/
+.kiro/
