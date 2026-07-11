@@ -90,11 +90,11 @@ const servicesList = [
     features: ["Analisa kerusakan gratis", "Spare part original", "Garansi perbaikan 6 bulan"],
   },
   {
-    title: "Service Hydraulic System",
-    desc: "Perawatan dan perbaikan sistem hidrolik untuk memastikan performa pengangkatan yang optimal. Tim ahli kami siap menangani semua merek dan tipe sistem hidrolik.",
+    title: "Hydraulic System Truck",
+    desc: "Instalasi, perbaikan, dan perawatan hydraulic system truck untuk memastikan performa pengangkatan tetap optimal dan andal. Tim ahli kami siap menangani semua merek dan tipe sistem hidrolik.",
     img: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80",
     icon: Settings,
-    features: ["Servis berkala terjadwal", "Penggantian seal & komponen", "Uji tekanan sistem"],
+    features: ["Instalasi sistem baru", "Perbaikan & overhaul", "Perawatan berkala"],
   }
 ];
 
@@ -241,8 +241,8 @@ export default function Home() {
             <p className="font-label-md text-btn text-on-surface-variant uppercase tracking-[0.3em] mb-4">
               Berdikari Raya Service
             </p>
-            <h2 className="font-headline-lg text-heading text-primary leading-tight">
-              Build. Reliability. Solutions.
+            <h2 className="font-[family-name:var(--font-montserrat)] font-black text-heading text-primary leading-tight whitespace-nowrap">
+              One Stop Solutions
             </h2>
             <div className="w-16 md:w-24 h-1.5 bg-primary rounded-full mt-6"></div>
           </div>
@@ -363,8 +363,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-6 md:p-7 flex flex-col flex-1 w-full">
-                  <h3 className="font-headline-md font-semibold text-heading text-primary uppercase tracking-wider mb-3 leading-tight">{service.title}</h3>
-                  <p className="font-body-md text-body text-on-surface-variant leading-relaxed line-clamp-3 mb-4 md:mb-6 flex-1">
+                  <h3 className="font-headline-md font-semibold text-base md:text-2xl text-primary uppercase tracking-wide mb-3 leading-tight">{service.title}</h3>
+                  <p className="font-body-md text-base md:text-body text-on-surface-variant leading-relaxed mb-4 md:mb-6 flex-1">
                     {service.desc}
                   </p>
                   <ul className="flex flex-col gap-2 mb-6">

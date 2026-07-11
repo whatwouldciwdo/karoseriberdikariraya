@@ -196,8 +196,8 @@ export default function AboutPage() {
               <p className="font-label-md text-btn text-on-surface-variant uppercase tracking-[0.3em] mb-4">
                 Berdikari Raya Service
               </p>
-              <h2 className="font-headline-lg text-heading text-primary leading-tight">
-                Build. Reliability. Solutions.
+              <h2 className="font-[family-name:var(--font-montserrat)] font-black text-heading text-primary leading-tight whitespace-nowrap">
+                One Stop Solutions
               </h2>
               <div className="w-16 md:w-24 h-1.5 bg-primary rounded-full mt-6" />
             </div>

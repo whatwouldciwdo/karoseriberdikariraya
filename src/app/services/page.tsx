@@ -149,11 +149,11 @@ const servicesList = [
   },
   {
     slug: "hydraulic-system-truck",
-    title: "Service Hydraulic System",
-    desc: "Perawatan dan perbaikan sistem hidrolik untuk memastikan performa pengangkatan yang optimal. Tim ahli kami siap menangani semua merek dan tipe sistem hidrolik.",
+    title: "Hydraulic System Truck",
+    desc: "Instalasi, perbaikan, dan perawatan hydraulic system truck untuk memastikan performa pengangkatan tetap optimal dan andal. Tim ahli kami siap menangani semua merek dan tipe sistem hidrolik.",
     img: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&q=80",
     icon: Settings,
-    features: ["Servis berkala terjadwal", "Penggantian seal & komponen", "Uji tekanan sistem"],
+    features: ["Instalasi sistem baru", "Perbaikan & overhaul", "Perawatan berkala"],
   },
 ];
 
@@ -219,10 +219,10 @@ export default function ServicesPage() {
 
               {/* Content */}
               <div className="p-7 md:p-8 flex flex-col flex-1">
-                <h2 className="font-headline-md font-semibold text-heading text-primary uppercase tracking-wider mb-3 leading-tight">
+                <h2 className="font-headline-md font-semibold text-base md:text-2xl text-primary uppercase tracking-wide mb-3 leading-tight">
                   {service.title}
                 </h2>
-                <p className="font-body-md text-body text-on-surface-variant leading-relaxed mb-5 flex-1">
+                <p className="font-body-md text-base md:text-body text-on-surface-variant leading-relaxed mb-5 flex-1">
                   {service.desc}
                 </p>
 

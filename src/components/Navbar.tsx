@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { usePathname } from "next/navigation";
 import {
-  Menu, X, Wrench, Phone, FileText, Briefcase, Images, ChevronDown, ChevronRight
+  Menu, X, Wrench, Phone, FileText, Briefcase, Images, ChevronDown, ChevronRight, Home
 } from "lucide-react";
 import Image from "next/image";
 import { services } from "@/data/services";
@@ -13,6 +13,12 @@ import { portfolioProjects } from "@/data/portfolio";
 
 
 const navItems = [
+  {
+    label: "Home",
+    href: "/",
+    icon: Home,
+    thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&h=120&fit=crop&q=80",
+  },
   {
     label: "Services",
     href: "/services",
@@ -84,9 +90,8 @@ export default function Navbar() {
             priority
           />
           <div className="select-none shrink-0 uppercase">
-            <span className="font-label-md font-black tracking-[0.06em] text-btn whitespace-nowrap">
-              <span className="text-[#E11D2A]">BERDIKARI RAYA</span>{" "}
-              <span className="text-on-primary dark:text-black">SERVICE</span>
+            <span className="font-label-md font-black tracking-[0.06em] text-btn whitespace-nowrap text-[#ce1c08]">
+              BERDIKARI RAYA SERVICE
             </span>
           </div>
         </div>
