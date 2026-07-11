@@ -39,6 +39,8 @@ const categoryColors: Record<string, string> = {
   Regulasi: "bg-surface-container text-on-surface-variant",
 };
 
+
+
 export default function BlogPage() {
   const [featured, ...rest] = blogPosts;
 

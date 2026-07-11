@@ -9,13 +9,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { services } from "@/data/services";
+import { portfolioProjects } from "@/data/portfolio";
 
-const portfolioClients = [
-  "PT. Great Giant Pineapple",
-  "PT. Delta Garda Persada",
-  "Badan Pengawasan Keuangan dan Pembangunan (BPKP)",
-  "PT. Yanakarti Kwasa",
-];
 
 const navItems = [
   {
@@ -38,7 +33,8 @@ const navItems = [
     href: "/portfolio",
     icon: Images,
     thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&h=120&fit=crop&q=80",
-    submenu: portfolioClients.map((c) => ({ label: c, href: "/portfolio" })),
+    submenu: portfolioProjects.map((p) => ({ label: p.shortTitle, href: `/portfolio/${p.slug}` })),
+
   },
 
   {

@@ -1,29 +1,34 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, Building2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { portfolioProjects } from "@/data/portfolio";
+
+const SITE_URL = "https://karoseriberdikariraya.com";
 
 export const metadata: Metadata = {
-  title: "Portofolio | Berdikari Raya Service",
-  description: "Portofolio pekerjaan karoseri dan hydraulic system truck Berdikari Raya Service.",
+  title: "Portofolio Karoseri Truck & Repair Body | Berdikari Raya Service",
+  description:
+    "Lihat portofolio pekerjaan karoseri truck, karoseri box aluminium, box freezer, dan repair body dari Berdikari Raya Service. Telah dipercaya berbagai perusahaan dan instansi di JABODETABEK.",
+  keywords: [
+    "portofolio karoseri truck",
+    "jasa karoseri truck",
+    "karoseri box aluminium",
+    "karoseri box freezer",
+    "repair body truck",
+    "karoseri Bekasi",
+  ],
+  alternates: { canonical: `${SITE_URL}/portfolio` },
+  openGraph: {
+    title: "Portofolio Karoseri Truck & Repair Body | Berdikari Raya Service",
+    description:
+      "Dokumentasi proyek karoseri truck, box aluminium, box freezer, dan repair body untuk berbagai perusahaan dan instansi.",
+    url: `${SITE_URL}/portfolio`,
+    images: [{ url: "/logo/berdikariraya.png", alt: "Portofolio Berdikari Raya Service" }],
+  },
 };
-
-const portfolioItems = [
-  "Karoseri Fuel Truck",
-  "Karoseri Lube Truck",
-  "Karoseri Water Sprayer",
-  "Karoseri Box Aluminium",
-  "Karoseri Box Besi",
-  "Karoseri Wing Box",
-  "Karoseri Dump Truck",
-  "Karoseri Three Way Truck",
-  "Karoseri Truck Tangki",
-  "Karoseri Box Freezer",
-  "Repair Body Custom",
-  "Service Hydraulic System",
-];
 
 export default function PortfolioPage() {
   return (
@@ -47,26 +52,56 @@ export default function PortfolioPage() {
             Telah Dipercaya Oleh Banyak Klien
           </h1>
           <p className="font-body-lg text-body text-white/85 max-w-3xl leading-relaxed">
-            Dokumentasi ringkas pekerjaan Berdikari Raya Service dalam pembuatan karoseri dan hydraulic system truck untuk kebutuhan operasional pelanggan.
+            Dokumentasi pekerjaan Berdikari Raya Service dalam pembuatan karoseri truck, karoseri box, dan repair body untuk kebutuhan operasional perusahaan maupun instansi.
           </p>
         </div>
       </section>
 
       <main className="px-6 md:px-margin-desktop py-20 md:py-32 space-y-16">
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {portfolioItems.map((item) => (
-            <div key={item} className="bg-surface-container-high rounded-3xl p-8 border border-outline-variant/15 shadow-sleek">
-              <CheckCircle className="text-primary mb-6" size={32} />
-              <h2 className="font-headline-md text-heading text-primary mb-3">{item}</h2>
-              <p className="font-body-md text-body text-on-surface-variant leading-relaxed">
-                Pekerjaan dirancang sesuai kebutuhan operasional, standar material, dan fungsi unit pelanggan.
-              </p>
-            </div>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {portfolioProjects.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/portfolio/${project.slug}`}
+              className="group flex flex-col bg-surface-container-high rounded-3xl overflow-hidden border border-outline-variant/15 shadow-sleek hover:border-primary/20 hover:-translate-y-2 transition-all duration-300"
+            >
+              <div className="h-52 relative overflow-hidden">
+                <Image
+                  src={project.heroImage}
+                  alt={project.images[0]?.alt ?? project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="font-label-md text-btn px-3 py-1 rounded-full backdrop-blur-md bg-surface-container-high/80 text-primary border border-outline-variant/20">
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col flex-1 p-6">
+                <div className="flex items-center gap-2 mb-3 text-on-surface-variant">
+                  <Building2 size={14} className="text-primary shrink-0" />
+                  <span className="font-label-md text-btn line-clamp-1">{project.client}</span>
+                </div>
+                <h2 className="font-headline-sm text-heading text-primary mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2">
+                  {project.title}
+                </h2>
+                <p className="font-body-md text-body text-on-surface-variant leading-relaxed line-clamp-3 flex-1 mb-5">
+                  {project.excerpt}
+                </p>
+                <div className="flex items-center gap-2 text-primary font-label-md text-btn uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
+                  <span>Lihat Proyek</span>
+                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
           ))}
         </section>
 
         <section className="bg-surface-container-low rounded-3xl p-8 md:p-12 border border-outline-variant/15 text-center flex flex-col items-center gap-6">
-          <h2 className="font-headline-md text-heading text-primary">Butuh Unit Karoseri atau Hydraulic System?</h2>
+          <h2 className="font-headline-md text-heading text-primary">Butuh Unit Karoseri atau Repair Body?</h2>
           <p className="font-body-lg text-body text-on-surface-variant max-w-2xl">
             Konsultasikan kebutuhan kendaraan niaga Anda bersama Berdikari Raya Service.
           </p>

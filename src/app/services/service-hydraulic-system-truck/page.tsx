@@ -11,7 +11,10 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import KonsultasiButton from "@/components/KonsultasiButton";
+import ImageCarousel from "@/components/ImageCarousel";
 import { services } from "@/data/services";
+import { hydraulicGallery } from "@/data/gallery";
+
 
 const SITE_URL = "https://karoseriberdikariraya.com";
 
@@ -211,11 +214,26 @@ export default function ServiceHydraulicSystemTruckPage() {
           </div>
         </section>
 
+        {/* Galeri Dokumentasi */}
+        <section className="px-6 md:px-margin-desktop py-24 border-t border-outline-variant/10">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-12 text-center">
+              <p className="font-label-md text-btn text-primary uppercase tracking-widest mb-3">Dokumentasi</p>
+              <h2 className="font-headline-lg text-heading text-primary mb-4">
+                Galeri Service Hydraulic System Truck
+              </h2>
+              <div className="w-20 h-1.5 bg-primary rounded-full mx-auto" />
+            </div>
+            <ImageCarousel images={hydraulicGallery} label="Galeri service hydraulic system truck" />
+          </div>
+        </section>
+
         <section className="relative px-6 md:px-margin-desktop py-24 bg-surface-container-lowest border-t border-outline-variant/10 overflow-hidden">
           <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[120px] pointer-events-none" />
           <div className="relative z-10 max-w-5xl mx-auto">
             <div className="mb-14 text-center">
               <h2 className="font-headline-lg text-heading text-primary mb-4">Tanda Hydraulic System Perlu Segera Diservice</h2>
+
               <div className="w-20 h-1.5 bg-primary rounded-full mx-auto" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

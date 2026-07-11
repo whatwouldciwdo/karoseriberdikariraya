@@ -124,6 +124,8 @@ export default async function BlogDetail({ params }: Props) {
             prose-li:mb-2
             prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-surface-container/35 prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:rounded-r-xl prose-blockquote:text-primary prose-blockquote:font-body-lg prose-blockquote:italic
           ">
+
+
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </article>
 
