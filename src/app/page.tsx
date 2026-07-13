@@ -100,7 +100,7 @@ export default async function Home() {
           <p className="font-label-md text-btn text-white/80 uppercase tracking-[0.28em] drop-shadow-lg mb-4">
             Berdikari Raya Service
           </p>
-          <h1 className="font-[family-name:var(--font-montserrat)] font-black text-heading text-white tracking-tight leading-[1.05] drop-shadow-2xl mb-4 md:mb-6 max-w-4xl whitespace-nowrap">
+          <h1 className="font-[family-name:var(--font-montserrat)] font-black text-heading text-white tracking-tight leading-[1.05] drop-shadow-2xl mb-4 md:mb-6 max-w-4xl md:whitespace-nowrap">
             Build. Reliability. Solutions.
           </h1>
           <p className="font-[family-name:var(--font-libre-franklin)] text-body text-white/90 max-w-3xl drop-shadow-lg leading-relaxed font-semibold">
