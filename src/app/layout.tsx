@@ -1,23 +1,36 @@
 import type { Metadata } from "next";
-import { Montserrat, Libre_Franklin } from "next/font/google";
+import Script from "next/script";
+import localFont from "next/font/local";
 import "./globals.css";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
 const SITE_URL = "https://karoseriberdikariraya.com";
+const GTM_ID = "GTM-WQS3J6SP";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
+// Self-hosted fonts (via @fontsource) so the build never depends on a
+// network fetch to Google Fonts at build time.
+const montserrat = localFont({
   variable: "--font-montserrat",
-  weight: ["200", "300", "400", "500", "700", "800"],
   display: "swap",
+  src: [
+    { path: "../fonts/montserrat-200.woff2", weight: "200", style: "normal" },
+    { path: "../fonts/montserrat-300.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/montserrat-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/montserrat-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/montserrat-700.woff2", weight: "700", style: "normal" },
+    { path: "../fonts/montserrat-800.woff2", weight: "800", style: "normal" },
+  ],
 });
 
-const libreFranklin = Libre_Franklin({
-  subsets: ["latin"],
+const libreFranklin = localFont({
   variable: "--font-libre-franklin",
-  weight: ["400", "500"],
   display: "swap",
+  src: [
+    { path: "../fonts/libre-franklin-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/libre-franklin-500.woff2", weight: "500", style: "normal" },
+  ],
 });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -106,7 +119,8 @@ const jsonLd = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Karoseri Dump Truck" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Karoseri Box Aluminium" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Karoseri Wing Box" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Repair Body Custom" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Karoseri Repair" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Body Custom" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Service Hydraulic System" } },
     ],
   },
@@ -129,8 +143,27 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Tag Manager */}
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        {/* End Google Tag Manager */}
       </head>
       <body className="bg-background text-on-surface selection:bg-secondary-container selection:text-primary font-body-md overflow-x-hidden min-h-screen flex flex-col">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         {children}
         <WhatsAppFAB />
       </body>

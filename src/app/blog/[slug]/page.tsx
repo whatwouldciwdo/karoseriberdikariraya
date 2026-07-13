@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ReadingProgress from "@/components/ReadingProgress";
 import Image from "next/image";
-import { blogPosts } from "@/data/blog";
+import { getBlogPost, getBlogPosts } from "@/lib/queries/blog";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -14,9 +14,13 @@ type Props = {
 
 const SITE_URL = "https://karoseriberdikariraya.com";
 
+// ISR: konten artikel di-refresh tiap 60 detik tanpa rebuild.
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = await getBlogPost(slug);
+
 
   if (!post) {
     return { title: "Artikel Tidak Ditemukan" };
@@ -41,18 +45,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogDetail({ params }: Props) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = await getBlogPost(slug);
 
   if (!post) {
     notFound();
   }
 
-  // Find related articles (just the next two in the array for now, or loop around)
+  // Find related articles (just the next two in the list, looping around)
+  const blogPosts = await getBlogPosts();
   const currentIndex = blogPosts.findIndex((p) => p.slug === post.slug);
   const relatedPosts = [
     blogPosts[(currentIndex + 1) % blogPosts.length],
     blogPosts[(currentIndex + 2) % blogPosts.length],
   ];
+
 
   return (
     <div className="w-full bg-background min-h-screen">

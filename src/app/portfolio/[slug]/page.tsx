@@ -14,7 +14,13 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { portfolioProjects, getPortfolioProject } from "@/data/portfolio";
+import {
+  getPortfolioProjects,
+  getPortfolioProjectBySlug,
+} from "@/lib/queries/portfolio";
+
+// ISR: portofolio di-refresh tiap 60 detik tanpa rebuild.
+export const revalidate = 60;
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,13 +28,15 @@ type Props = {
 
 const SITE_URL = "https://karoseriberdikariraya.com";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const portfolioProjects = await getPortfolioProjects();
   return portfolioProjects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const project = getPortfolioProject(slug);
+  const project = await getPortfolioProjectBySlug(slug);
+
 
   if (!project) {
     return { title: "Portofolio Tidak Ditemukan" };
@@ -53,13 +61,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PortfolioDetail({ params }: Props) {
   const { slug } = await params;
-  const project = getPortfolioProject(slug);
+  const project = await getPortfolioProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
+  const portfolioProjects = await getPortfolioProjects();
   const currentIndex = portfolioProjects.findIndex((p) => p.slug === project.slug);
+
   const related = [
     portfolioProjects[(currentIndex + 1) % portfolioProjects.length],
     portfolioProjects[(currentIndex + 2) % portfolioProjects.length],

@@ -1,8 +1,23 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import {
+  getSiteContents,
+  type ContactPhone,
+  type ContactEmail,
+  type CompanyAddress,
+} from "@/lib/queries/site-content";
 
-export default function Footer() {
+export default async function Footer() {
+  const content = await getSiteContents<{
+    contact_phones: ContactPhone[];
+    contact_emails: ContactEmail[];
+    company_address: CompanyAddress;
+  }>(["contact_phones", "contact_emails", "company_address"]);
+
+  const phones = content.contact_phones;
+  const emails = content.contact_emails;
+  const address = content.company_address;
 
   return (
     <footer className="relative w-full bg-white text-black overflow-hidden border-t border-black/10">
@@ -61,22 +76,18 @@ export default function Footer() {
           <div className="flex flex-col space-y-4">
             <h3 className="text-btn text-black font-bold tracking-wider mb-2">Hubungi Kami</h3>
             <div className="flex flex-col gap-3">
-              <a href="https://wa.me/6282113484129" className="flex items-center gap-3 text-black/70 hover:text-[#E11D2A] transition-colors">
-                <Phone size={18} />
-                <span className="text-btn">+62 821-1348-4129</span>
-              </a>
-              <a href="mailto:dodo.prasetyo@berdikariraya.com" className="flex items-center gap-3 text-black/70 hover:text-[#E11D2A] transition-colors">
-                <Mail size={18} />
-                <span className="text-btn truncate">dodo.prasetyo@berdikariraya.com</span>
-              </a>
-              <a href="https://wa.me/6281291578404" className="flex items-center gap-3 text-black/70 hover:text-[#E11D2A] transition-colors">
-                <Phone size={18} />
-                <span className="text-btn">+62 812-9157-8404</span>
-              </a>
-              <a href="mailto:slamet.mulyono@berdikariraya.com" className="flex items-center gap-3 text-black/70 hover:text-[#E11D2A] transition-colors">
-                <Mail size={18} />
-                <span className="text-btn truncate">slamet.mulyono@berdikariraya.com</span>
-              </a>
+              {phones.map((p) => (
+                <a key={p.phone} href={p.whatsapp_url} className="flex items-center gap-3 text-black/70 hover:text-[#E11D2A] transition-colors">
+                  <Phone size={18} />
+                  <span className="text-btn">{p.phone}</span>
+                </a>
+              ))}
+              {emails.map((e) => (
+                <a key={e.email} href={`mailto:${e.email}`} className="flex items-center gap-3 text-black/70 hover:text-[#E11D2A] transition-colors">
+                  <Mail size={18} />
+                  <span className="text-btn truncate">{e.email}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -84,7 +95,7 @@ export default function Footer() {
         <div className="border-t border-black/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-black/70 text-btn flex flex-col md:flex-row items-center gap-2 text-center md:text-left min-w-0 w-full md:w-auto">
             <MapPin size={16} className="hidden md:block text-[#E11D2A] shrink-0" />
-            <span className="break-words">Jalan Macem, No 27, RT 002/001, Cikiwul, Kecamatan Bantar Gebang, Kota Bekasi, Jawa Barat, 17152</span>
+            <span className="break-words">{address.street}</span>
           </div>
           <span className="text-btn text-black/50">
             © 2026 Berdikari Raya. All rights reserved.

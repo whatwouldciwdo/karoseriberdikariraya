@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { services } from "@/data/services";
+import { getServices } from "@/lib/queries/services";
 
 const SITE_URL = "https://karoseriberdikariraya.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date().toISOString();
+  const services = await getServices();
 
   const serviceDetailPages: MetadataRoute.Sitemap = [
     // Halaman service dedicated (hydraulic)

@@ -11,7 +11,11 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import KonsultasiButton from "@/components/KonsultasiButton";
-import { services, getService } from "@/data/services";
+import { getServices, getServiceBySlug } from "@/lib/queries/services";
+
+// ISR: layanan di-refresh tiap 60 detik tanpa rebuild.
+export const revalidate = 60;
+
 
 const SITE_URL = "https://karoseriberdikariraya.com";
 
@@ -35,17 +39,20 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const services = await getServices();
   return services.map((s) => ({ slug: s.slug }));
 }
 
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const service = getService(slug);
+  const service = await getServiceBySlug(slug);
 
   if (!service) {
     return { title: "Layanan Tidak Ditemukan" };
   }
+
 
   const url = `${SITE_URL}/services/${service.slug}`;
 
@@ -65,14 +72,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
-  const service = getService(slug);
+  const service = await getServiceBySlug(slug);
 
   if (!service) {
     notFound();
   }
 
   const Icon = iconMap[service.icon] ?? Package;
-  const related = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const allServices = await getServices();
+  const related = allServices.filter((s) => s.slug !== service.slug).slice(0, 3);
+
 
   const jsonLd = {
     "@context": "https://schema.org",

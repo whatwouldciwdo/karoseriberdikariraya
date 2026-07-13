@@ -4,9 +4,13 @@ import Link from "next/link";
 import { ArrowRight, Building2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { portfolioProjects } from "@/data/portfolio";
+import { getPortfolioProjects } from "@/lib/queries/portfolio";
+
+// ISR: portofolio di-refresh tiap 60 detik tanpa rebuild.
+export const revalidate = 60;
 
 const SITE_URL = "https://karoseriberdikariraya.com";
+
 
 export const metadata: Metadata = {
   title: "Portofolio Karoseri Truck & Repair Body | Berdikari Raya Service",
@@ -30,8 +34,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const portfolioProjects = await getPortfolioProjects();
+
   return (
+
     <div className="w-full bg-background text-on-background overflow-x-hidden">
       <section className="relative min-h-[70vh] flex items-end pb-16 md:pb-24 bg-surface">
         <Image

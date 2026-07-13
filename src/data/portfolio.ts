@@ -249,49 +249,49 @@ export const portfolioProjects: PortfolioProject[] = [
   },
   {
     slug: "karoseri-truck-rumah-sakit-ibnu-sina",
-    shortTitle: "Rumah Sakit Ibnu Sina",
-    title: "Karoseri Truck untuk Rumah Sakit Ibnu Sina",
-    client: "Rumah Sakit Ibnu Sina",
+    shortTitle: "Yayasan Ibnu Sina",
+    title: "Karoseri Truck untuk Yayasan Ibnu Sina",
+    client: "Yayasan Ibnu Sina",
     category: "Karoseri Truck",
     location: "JABODETABEK",
     year: "2025",
     excerpt:
-      "Berdikari Raya Service mengerjakan karoseri truck untuk menunjang kebutuhan operasional Rumah Sakit Ibnu Sina dengan pengerjaan rapi dan fungsional.",
+      "Berdikari Raya Service mengerjakan karoseri truck untuk menunjang kebutuhan operasional Yayasan Ibnu Sina dengan pengerjaan rapi dan fungsional.",
     heroImage:
       "/images/portfolio/karoseri-truck-rumah-sakit-ibnu-sina.webp",
     images: [
       {
         src: "/images/portfolio/karoseri-truck-rumah-sakit-ibnu-sina.webp",
-        alt: "Karoseri truck Rumah Sakit Ibnu Sina oleh Berdikari Raya Service",
+        alt: "Karoseri truck Yayasan Ibnu Sina oleh Berdikari Raya Service",
         caption:
-          "Karoseri truck untuk mendukung kebutuhan operasional Rumah Sakit Ibnu Sina.",
+          "Karoseri truck untuk mendukung kebutuhan operasional Yayasan Ibnu Sina.",
       },
     ],
     metaTitle:
-      "Karoseri Truck Rumah Sakit Ibnu Sina | Berdikari Raya Service",
+      "Karoseri Truck Yayasan Ibnu Sina | Berdikari Raya Service",
     metaDescription:
-      "Portofolio karoseri truck untuk Rumah Sakit Ibnu Sina. Jasa karoseri truck untuk kebutuhan layanan kesehatan oleh Berdikari Raya Service Bekasi & JABODETABEK.",
+      "Portofolio karoseri truck untuk Yayasan Ibnu Sina. Jasa karoseri truck untuk kebutuhan layanan kesehatan oleh Berdikari Raya Service Bekasi & JABODETABEK.",
     keywords: [
       "karoseri truck rumah sakit",
       "karoseri truck layanan kesehatan",
-      "karoseri truck Rumah Sakit Ibnu Sina",
+      "karoseri truck Yayasan Ibnu Sina",
       "jasa karoseri truck",
       "karoseri Bekasi",
     ],
     highlights: [
-      "Klien: Rumah Sakit Ibnu Sina",
+      "Klien: Yayasan Ibnu Sina",
       "Lingkup: Karoseri truck operasional",
       "Mengutamakan fungsi dan kerapian pengerjaan",
     ],
     content: `
       <h2>Dukungan untuk Layanan Kesehatan</h2>
-      <p>Fasilitas kesehatan membutuhkan armada pendukung yang bersih, fungsional, dan dapat diandalkan. Berdikari Raya Service dipercaya mengerjakan <strong>karoseri truck</strong> untuk menunjang kebutuhan operasional <strong>Rumah Sakit Ibnu Sina</strong>.</p>
+      <p>Fasilitas kesehatan membutuhkan armada pendukung yang bersih, fungsional, dan dapat diandalkan. Berdikari Raya Service dipercaya mengerjakan <strong>karoseri truck</strong> untuk menunjang kebutuhan operasional <strong>Yayasan Ibnu Sina</strong>.</p>
 
       <h2>Pengerjaan yang Mengutamakan Fungsi</h2>
       <p>Unit dirancang dengan fokus pada fungsi dan kerapian. Kami memastikan setiap detail dikerjakan agar unit mudah digunakan dan tampil profesional sesuai citra institusi.</p>
 
       <h2>Unit Siap Digunakan</h2>
-      <p>Hasil akhir berupa karoseri truck yang siap menunjang beragam kebutuhan operasional rumah sakit. Proyek ini memperluas pengalaman kami melayani <strong>jasa karoseri truck</strong> untuk berbagai sektor, termasuk layanan kesehatan.</p>
+      <p>Hasil akhir berupa karoseri truck yang siap menunjang beragam kebutuhan operasional yayasan. Proyek ini memperluas pengalaman kami melayani <strong>jasa karoseri truck</strong> untuk berbagai sektor, termasuk layanan kesehatan.</p>
     `,
   },
   {

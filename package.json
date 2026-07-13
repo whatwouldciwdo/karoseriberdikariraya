@@ -6,9 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "migrate:blog": "tsx scripts/migrate-blog.mjs",
+    "migrate:services": "tsx scripts/migrate-services.mjs",
+    "migrate:portfolio": "tsx scripts/migrate-portfolio.mjs",
+    "migrate:site-content": "tsx scripts/migrate-site-content.mjs",
+    "create:admin": "node scripts/create-admin.mjs",
+    "convert:images": "node scripts/convert-service-images.mjs"
   },
+
   "dependencies": {
+    "@fontsource/libre-franklin": "^5.2.8",
+    "@fontsource/montserrat": "^5.2.8",
+    "@netlify/plugin-nextjs": "^5.15.12",
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.110.2",
     "lucide-react": "^1.14.0",
     "next": "16.2.6",
     "react": "19.2.4",
@@ -22,6 +34,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
+    "tsx": "^4.23.0",
     "typescript": "^5"
   },
   "browserslist": [

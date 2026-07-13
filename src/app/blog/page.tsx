@@ -4,9 +4,14 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import { blogPosts } from "@/data/blog";
+import { getBlogPosts } from "@/lib/queries/blog";
 
 const SITE_URL = "https://karoseriberdikariraya.com";
+
+// ISR: halaman di-cache namun otomatis refresh tiap 60 detik.
+// Edit artikel di admin akan tampil tanpa perlu rebuild Netlify.
+export const revalidate = 60;
+
 
 export const metadata: Metadata = {
   title: "News Karoseri Truck | Tips, Panduan & Informasi Industri",
@@ -41,8 +46,10 @@ const categoryColors: Record<string, string> = {
 
 
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogPosts = await getBlogPosts();
   const [featured, ...rest] = blogPosts;
+
 
   return (
     <div className="w-full" style={{ overflowX: "clip" }}>

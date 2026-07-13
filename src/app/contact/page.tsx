@@ -261,7 +261,8 @@ export default function ContactPage() {
                         <option value="Karoseri Three Way Truck" className="bg-surface-container-low text-primary">Karoseri Three Way Truck</option>
                         <option value="Karoseri Truck Tangki" className="bg-surface-container-low text-primary">Karoseri Truck Tangki</option>
                         <option value="Karoseri Box Freezer" className="bg-surface-container-low text-primary">Karoseri Box Freezer</option>
-                        <option value="Repair Body Custom" className="bg-surface-container-low text-primary">Repair Body Custom</option>
+                        <option value="Karoseri Repair" className="bg-surface-container-low text-primary">Karoseri Repair</option>
+                        <option value="Body Custom" className="bg-surface-container-low text-primary">Body Custom</option>
                         <option value="Service Hydraulic System" className="bg-surface-container-low text-primary">Service Hydraulic System</option>
                         <option value="Lainnya" className="bg-surface-container-low text-primary">Lainnya</option>
                       </select>

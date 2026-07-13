@@ -25,7 +25,8 @@ const navItems = [
     icon: Wrench,
     thumb: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=120&h=120&fit=crop&q=80",
     submenu: [
-      ...["karoseri-box-aluminium", "karoseri-box-freezer", "repair-custom-body"]
+      ...["karoseri-box-aluminium", "karoseri-box-freezer", "karoseri-repair"]
+
         .map((slug) => services.find((s) => s.slug === slug))
         .filter((s): s is NonNullable<typeof s> => Boolean(s))
         .map((s) => ({ label: s.shortTitle, href: `/services/${s.slug}` })),
@@ -117,7 +118,8 @@ export default function Navbar() {
       )}
 
       {isMenuOpen && (
-        <div id="main-navigation-menu" className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-lg z-40 flex flex-col p-8 bg-surface-container-high rounded-2xl shadow-2xl backdrop-blur-xl border border-outline-variant/15" role="dialog" aria-label="Menu navigasi utama">
+        <div id="main-navigation-menu" className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-lg z-40 flex flex-col p-8 bg-surface-container-high rounded-2xl shadow-2xl backdrop-blur-xl border border-outline-variant/15 max-h-[calc(100dvh-8rem)] overflow-y-auto" role="dialog" aria-label="Menu navigasi utama">
+
           <div className="mb-6 border-b border-outline-variant/10 pb-2">
             <p className="font-label-sm text-on-surface-variant uppercase tracking-widest">
               Navigation Menu
