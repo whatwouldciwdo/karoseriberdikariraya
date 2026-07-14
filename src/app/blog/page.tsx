@@ -90,8 +90,8 @@ export default async function BlogPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-high/60 hidden md:block" />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent md:hidden" />
               </div>
-              <div className="flex flex-col justify-center p-8 md:p-12">
-                <div className="flex items-center gap-3 mb-4">
+              <div className="flex flex-col justify-center p-6 sm:p-8 md:p-12">
+                <div className="flex items-center gap-2 sm:gap-3 mb-4 flex-wrap">
                   <span className={`font-label-md text-btn px-3 py-1 rounded-full ${featured.category === "Panduan" ? "bg-primary/5 text-primary border border-outline-variant/20" : categoryColors[featured.category]}`}>
                     {featured.category}
                   </span>
@@ -100,13 +100,13 @@ export default async function BlogPage() {
                     {featured.readTime}
                   </span>
                 </div>
-                <h2 className="font-headline-md text-heading text-primary mb-4 group-hover:text-primary transition-colors leading-tight">
+                <h2 className="font-headline-md text-heading text-primary mb-4 group-hover:text-primary transition-colors leading-tight break-words hyphens-auto">
                   {featured.title}
                 </h2>
-                <p className="font-body-md text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
+                <p className="font-body-md text-on-surface-variant leading-relaxed mb-6 line-clamp-3 break-words">
                   {featured.excerpt}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3 flex-wrap">
                   <span className="font-label-md text-btn text-on-surface-variant">{featured.date}</span>
                   <div className="flex items-center gap-2 text-primary font-label-md text-btn group-hover:gap-4 transition-all">
                     <span>Baca Selengkapnya</span>
@@ -158,8 +158,8 @@ export default async function BlogPage() {
                   </div>
                 </div>
  
-                <div className="flex flex-col flex-1 p-6">
-                  <div className="flex items-center gap-3 mb-3">
+                <div className="flex flex-col flex-1 p-5 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 flex-wrap">
                     <span className="font-label-md text-btn text-on-surface-variant">{post.date}</span>
                     <span className="w-1 h-1 bg-outline-variant rounded-full" />
                     <span className="flex items-center gap-1 font-label-md text-btn text-on-surface-variant">
@@ -167,15 +167,17 @@ export default async function BlogPage() {
                       {post.readTime}
                     </span>
                   </div>
-                  <h2 className="font-headline-sm text-heading text-primary mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2">
+                  <h2 className="text-sm sm:text-base md:text-lg font-semibold text-primary mb-3 group-hover:text-primary transition-colors leading-snug line-clamp-2 break-words hyphens-auto">
                     {post.title}
                   </h2>
-                  <p className="font-body-md text-body text-on-surface-variant leading-relaxed line-clamp-3 flex-1 mb-5">
+                  <p className="text-sm sm:text-base text-on-surface-variant leading-relaxed line-clamp-3 flex-1 mb-5 break-words">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-label-md text-btn uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">
-                    <span>Baca Artikel</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  <div className="mt-auto">
+                    <span className="inline-flex items-center gap-2 bg-primary/10 text-primary font-label-md text-btn px-4 py-2 rounded-full border border-primary/20 group-hover:bg-primary group-hover:text-on-primary group-hover:gap-3 group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300">
+                      Baca Selengkapnya
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
                 </div>
               </Link>

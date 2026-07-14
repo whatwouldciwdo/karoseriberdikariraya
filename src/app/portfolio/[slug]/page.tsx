@@ -268,10 +268,10 @@ export default async function PortfolioDetail({ params }: Props) {
                     </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-headline-sm text-heading text-primary mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                    <h3 className="text-lg md:text-xl font-semibold text-primary mb-3 leading-snug group-hover:text-primary transition-colors line-clamp-2 break-words">
                       {rel.title}
                     </h3>
-                    <p className="font-body-md text-body text-on-surface-variant line-clamp-2 mb-4 flex-1">
+                    <p className="text-sm md:text-base text-on-surface-variant leading-relaxed line-clamp-2 mb-4 flex-1 break-words">
                       {rel.excerpt}
                     </p>
                     <div className="flex items-center gap-2 text-primary font-label-md text-btn uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">

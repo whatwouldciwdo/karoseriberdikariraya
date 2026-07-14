@@ -17,13 +17,13 @@ const navItems = [
     label: "Home",
     href: "/",
     icon: Home,
-    thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&h=120&fit=crop&q=80",
+    thumb: "/images/services/karoseri-three-way-truck/karoseri-three-way-truck-01.webp",
   },
   {
     label: "Services",
     href: "/services",
     icon: Wrench,
-    thumb: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=120&h=120&fit=crop&q=80",
+    thumb: "/images/services/karoseri-box-aluminium/karoseri-box-aluminium-01.webp",
     submenu: [
       ...["karoseri-box-aluminium", "karoseri-box-freezer", "karoseri-repair"]
 
@@ -39,7 +39,7 @@ const navItems = [
     label: "Portfolio",
     href: "/portfolio",
     icon: Images,
-    thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&h=120&fit=crop&q=80",
+    thumb: "/images/portfolio/karoseri-truck-pt-great-giant-pineapple.webp",
     submenu: portfolioProjects.map((p) => ({ label: p.shortTitle, href: `/portfolio/${p.slug}` })),
 
   },
@@ -49,19 +49,19 @@ const navItems = [
 
     href: "/about",
     icon: Briefcase,
-    thumb: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&h=120&fit=crop&q=80",
+    thumb: "/images/services/karoseri-box-freezer/karoseri-box-freezer-03.webp",
   },
   {
     label: "News",
     href: "/blog",
     icon: FileText,
-    thumb: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=120&h=120&fit=crop&q=80",
+    thumb: "/images/hydraulic/hydraulic-system-truck-01.webp",
   },
   {
     label: "Contact",
     href: "/contact",
     icon: Phone,
-    thumb: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&h=120&fit=crop&q=80",
+    thumb: "/images/services/karoseri-repair/karoseri-repair-01.webp",
   },
 ];
 

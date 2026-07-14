@@ -87,15 +87,15 @@ export default async function PortfolioPage() {
                   </span>
                 </div>
               </div>
-              <div className="flex flex-col flex-1 p-6">
+              <div className="flex flex-col flex-1 p-7 md:p-8">
                 <div className="flex items-center gap-2 mb-3 text-on-surface-variant">
                   <Building2 size={14} className="text-primary shrink-0" />
-                  <span className="font-label-md text-btn line-clamp-1">{project.client}</span>
+                  <span className="font-label-md text-btn">{project.client}</span>
                 </div>
-                <h2 className="font-headline-sm text-heading text-primary mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2">
+                <h2 className="font-headline-md font-semibold text-base md:text-2xl text-primary uppercase tracking-wide mb-3 leading-tight group-hover:text-primary transition-colors">
                   {project.title}
                 </h2>
-                <p className="font-body-md text-body text-on-surface-variant leading-relaxed line-clamp-3 flex-1 mb-5">
+                <p className="font-body-md text-base md:text-body text-on-surface-variant leading-relaxed mb-5 flex-1">
                   {project.excerpt}
                 </p>
                 <div className="flex items-center gap-2 text-primary font-label-md text-btn uppercase tracking-wider mt-auto group-hover:gap-4 transition-all">

@@ -2,9 +2,14 @@
 
 import { useState, useEffect } from "react";
 
+const WA_MESSAGE =
+  "Halo B.R.S,\n\nKami membutuhkan solusi karoseri truck. Mohon rekomendasi terkait desain, spesifikasi, dan penawaran terbaiknya.";
+const WA_TEXT = encodeURIComponent(WA_MESSAGE);
+
 export default function WhatsAppFAB() {
   const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -30,7 +35,7 @@ export default function WhatsAppFAB() {
         }`}
       >
         <a
-          href="https://wa.me/6281291578404"
+          href={`https://wa.me/6281291578404?text=${WA_TEXT}`}
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-3 bg-surface-container-high px-4 py-3 rounded-2xl shadow-lg border border-outline-variant/20 hover:border-[#25D366] transition-colors"
@@ -43,7 +48,7 @@ export default function WhatsAppFAB() {
           </div>
         </a>
         <a
-          href="https://wa.me/6282113484129"
+          href={`https://wa.me/6282113484129?text=${WA_TEXT}`}
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-3 bg-surface-container-high px-4 py-3 rounded-2xl shadow-lg border border-outline-variant/20 hover:border-[#25D366] transition-colors"

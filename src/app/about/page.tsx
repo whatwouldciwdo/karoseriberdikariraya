@@ -100,8 +100,8 @@ export default function AboutPage() {
       {/* Hero */}
       <div className="relative w-full min-h-[65vh] flex items-end overflow-hidden bg-surface">
         <Image
-          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&q=80"
-          alt="Workshop Berdikari Raya"
+          src="/images/services/karoseri-three-way-truck/karoseri-three-way-truck-01.webp"
+          alt="Workshop Berdikari Raya Service - karoseri three way truck"
           fill
           sizes="100vw"
           className="object-cover grayscale brightness-35"
@@ -126,8 +126,8 @@ export default function AboutPage() {
             <div className="relative">
               <div className="h-[400px] md:h-[550px] bg-surface-container-high rounded-2xl relative overflow-hidden shadow-sleek border border-white/5 group">
                 <Image
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
-                  alt="Workshop Karoseri"
+                  src="/images/services/karoseri-three-way-truck/karoseri-three-way-truck-01.webp"
+                  alt="Karoseri three way truck buatan Berdikari Raya Service"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
