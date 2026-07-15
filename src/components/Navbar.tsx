@@ -144,17 +144,6 @@ export default function Navbar() {
                       onClick={() => setIsMenuOpen(false)}
                       className="flex items-center gap-4 flex-1 min-w-0 cursor-pointer"
                     >
-                      <div className={`w-11 h-11 rounded-lg overflow-hidden flex-shrink-0 border transition-all duration-200 relative ${
-                        isActive ? "border-on-primary/40" : "border-outline-variant/20 group-hover:border-outline-variant/40"
-                      }`}>
-                        <Image
-                          src={item.thumb}
-                          alt={item.label}
-                          fill
-                          sizes="44px"
-                          className="object-cover"
-                        />
-                      </div>
                       <span className="font-label-md text-btn flex-1">
                         {item.label}
                       </span>
@@ -207,14 +196,6 @@ export default function Navbar() {
               );
             })}
           </div>
-
-          <Link
-            href="/contact"
-            onClick={() => setIsMenuOpen(false)}
-            className="mt-8 bg-primary text-on-primary py-4 rounded-full font-label-md text-btn hover:opacity-95 transition-all active:scale-95 text-center uppercase tracking-widest font-semibold"
-          >
-            Get Started
-          </Link>
         </div>
       )}
     </>
