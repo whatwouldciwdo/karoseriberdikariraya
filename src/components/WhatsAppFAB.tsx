@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const WA_MESSAGE =
   "Halo B.R.S,\n\nKami membutuhkan solusi karoseri truck. Mohon rekomendasi terkait desain, spesifikasi, dan penawaran terbaiknya.";
@@ -9,6 +10,7 @@ const WA_TEXT = encodeURIComponent(WA_MESSAGE);
 export default function WhatsAppFAB() {
   const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
 
   useEffect(() => {
@@ -20,10 +22,15 @@ export default function WhatsAppFAB() {
     return () => window.removeEventListener("navbar-menu-toggle", handler);
   }, []);
 
+  // Sembunyikan tombol WhatsApp di halaman admin
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <div 
       className={`fixed bottom-6 right-6 z-[9999] flex-col items-end gap-3 group ${
-        menuOpen ? "hidden md:flex" : "flex"
+        menuOpen ? "hidden" : "flex"
       }`}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
