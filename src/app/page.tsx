@@ -120,8 +120,8 @@ export default async function Home() {
             <h2 className="font-[family-name:var(--font-montserrat)] font-black text-heading text-primary leading-tight whitespace-nowrap">
               One Stop Solutions
             </h2>
-            <p className="font-label-md text-btn text-on-surface-variant uppercase tracking-[0.3em] mt-4">
-              Karoseri. Repair. Custom. Hydraulic System Truck
+            <p className="font-[family-name:var(--font-libre-franklin)] text-body text-on-surface-variant leading-relaxed font-semibold mt-4">
+              Karoseri, Repair, Custom &amp; Hydraulic System Truck untuk Industri, Logistik, Distribusi &amp; Pertambangan
             </p>
             <div className="w-16 md:w-24 h-1.5 bg-primary rounded-full mt-6"></div>
           </div>

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
+
+
 import {
   Menu, X, Wrench, Phone, FileText, Briefcase, Images, ChevronDown, ChevronRight, Home
 } from "lucide-react";
@@ -71,10 +73,21 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
+
     window.dispatchEvent(
       new CustomEvent("navbar-menu-toggle", { detail: { open: isMenuOpen } })
     );
   }, [isMenuOpen]);
+
+  // Tutup menu setiap kali rute berubah. Menutup menu langsung di dalam
+  // onClick akan meng-unmount <Link> sebelum navigasi selesai diproses,
+  // sehingga klik (mis. menu Contact) tidak jalan. Menutup lewat perubahan
+  // pathname memastikan navigasi tetap berjalan.
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setOpenSubmenu(null);
+  }, [pathname]);
+
 
   return (
 
@@ -111,14 +124,14 @@ export default function Navbar() {
  
       {isMenuOpen && (
         <div
-          className="fixed inset-0 z-30 bg-background/40 backdrop-blur-md transition-opacity duration-300"
+          className="fixed inset-0 z-[9998] bg-background/40 backdrop-blur-md transition-opacity duration-300"
           onClick={() => setIsMenuOpen(false)}
           aria-hidden="true"
         />
       )}
 
       {isMenuOpen && (
-        <div id="main-navigation-menu" className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-lg z-40 flex flex-col p-8 bg-surface-container-high rounded-2xl shadow-2xl backdrop-blur-xl border border-outline-variant/15 max-h-[calc(100dvh-8rem)] overflow-y-auto" role="dialog" aria-label="Menu navigasi utama">
+        <div id="main-navigation-menu" className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-lg z-[10000] flex flex-col p-8 bg-surface-container-high rounded-2xl shadow-2xl backdrop-blur-xl border border-outline-variant/15 max-h-[calc(100dvh-8rem)] overflow-y-auto" role="dialog" aria-label="Menu navigasi utama">
 
           <div className="mb-6 border-b border-outline-variant/10 pb-2">
             <p className="font-label-sm text-on-surface-variant uppercase tracking-widest">
@@ -132,23 +145,24 @@ export default function Navbar() {
               const isSubmenuOpen = openSubmenu === item.href;
               return (
                 <div key={item.href} className="flex flex-col">
-                  <div
-                    className={`group flex items-center gap-4 px-3 py-2.5 rounded-xl transition-all duration-200 ${
-                      isActive
-                         ? "bg-primary text-on-primary font-bold shadow-md"
-                         : "text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
-                    }`}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center gap-4 flex-1 min-w-0 cursor-pointer"
+                  {hasSubmenu ? (
+                    <div
+                      className={`group flex items-center gap-4 px-3 py-2.5 rounded-xl transition-all duration-200 ${
+                        isActive
+                           ? "bg-primary text-on-primary font-bold shadow-md"
+                           : "text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                      }`}
                     >
-                      <span className="font-label-md text-btn flex-1">
-                        {item.label}
-                      </span>
-                    </Link>
-                    {hasSubmenu ? (
+                      <Link
+                        href={item.href}
+                        className="flex items-center gap-4 flex-1 min-w-0 cursor-pointer"
+                      >
+
+
+                        <span className="font-label-md text-btn flex-1">
+                          {item.label}
+                        </span>
+                      </Link>
                       <button
                         type="button"
                         onClick={() => setOpenSubmenu(isSubmenuOpen ? null : item.href)}
@@ -161,13 +175,28 @@ export default function Navbar() {
                           className={`transition-transform duration-200 ${isSubmenuOpen ? "rotate-180" : ""} ${isActive ? "text-on-primary" : "text-on-surface-variant group-hover:text-on-surface"}`}
                         />
                       </button>
-                    ) : (
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`group flex items-center gap-4 px-3 py-2.5 rounded-xl transition-all duration-200 cursor-pointer ${
+
+                        isActive
+                           ? "bg-primary text-on-primary font-bold shadow-md"
+                           : "text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                      }`}
+                    >
+
+                      <span className="font-label-md text-btn flex-1">
+                        {item.label}
+                      </span>
                       <item.icon
                         size={20}
                         className={`transition-colors ${isActive ? "text-on-primary" : "text-on-surface-variant group-hover:text-on-surface"}`}
                       />
-                    )}
-                  </div>
+                    </Link>
+                  )}
+
 
                   {hasSubmenu && isSubmenuOpen && (
                     <div className="flex flex-col gap-0.5 mt-1 ml-6 pl-4 border-l border-outline-variant/20">
@@ -177,8 +206,6 @@ export default function Navbar() {
                           <Link
                             key={sub.label}
                             href={sub.href}
-
-                            onClick={() => setIsMenuOpen(false)}
                             className={`group flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer ${
                               isSubActive
                                 ? "text-primary font-semibold bg-surface-container"
