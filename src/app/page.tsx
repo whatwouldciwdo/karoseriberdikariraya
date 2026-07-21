@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import {
   Package, Snowflake, Settings, Wrench, Fuel, Droplets, CloudRain, Box, Truck, Hammer, Replace, Cylinder,
   UserCheck, CircleDollarSign, ShieldCheck, Zap, HardHat, MapPin, Mail, ArrowRight, Check,
@@ -117,10 +117,10 @@ export default async function Home() {
           </div>
 
           <div className="max-w-4xl relative z-10">
-            <h2 className="font-[family-name:var(--font-montserrat)] font-black text-heading text-primary leading-tight whitespace-nowrap">
+            <h2 className="font-[family-name:var(--font-montserrat)] font-black text-heading text-primary leading-tight whitespace-normal md:whitespace-nowrap break-words">
               One Stop Solutions
             </h2>
-            <p className="font-[family-name:var(--font-libre-franklin)] text-body text-on-surface-variant leading-relaxed font-semibold mt-4">
+            <p className="font-[family-name:var(--font-libre-franklin)] text-body text-on-surface-variant leading-relaxed font-semibold mt-4 text-justify">
               Karoseri, Repair, Custom &amp; Hydraulic System Truck untuk Industri, Logistik, Distribusi &amp; Pertambangan
             </p>
             <div className="w-16 md:w-24 h-1.5 bg-primary rounded-full mt-6"></div>
@@ -164,7 +164,7 @@ export default async function Home() {
                   <h3 className="font-headline-md text-heading text-primary group-hover:text-primary transition-colors">{item.title}</h3>
                 </div>
 
-                <p className="font-body-lg text-body text-on-surface-variant leading-relaxed relative z-10">{item.desc}</p>
+                <p className="font-body-lg text-body text-on-surface-variant leading-relaxed relative z-10 text-justify">{item.desc}</p>
                 
                 {/* Logo or Icon Watermark at the bottom right */}
                 <div className="absolute -bottom-8 -right-8 w-24 h-24 text-primary opacity-[0.02] group-hover:opacity-[0.05] group-hover:rotate-[15deg] group-hover:scale-110 transition-all duration-500 pointer-events-none select-none z-0">
@@ -192,9 +192,9 @@ export default async function Home() {
         {/* Services / Layanan Section */}
         <section className="flex flex-col space-y-12">
           <div className="flex flex-col items-center text-center space-y-4">
-            <h2 className="font-headline-lg text-3xl md:text-5xl text-primary">Layanan Produk Kami</h2>
+            <h2 className="font-headline-lg text-3xl md:text-5xl text-primary break-words">Layanan Produk Kami</h2>
             <div className="w-16 md:w-24 h-1.5 bg-primary rounded-full"></div>
-            <p className="font-body-lg text-base md:text-lg text-on-surface-variant max-w-2xl px-4">
+            <p className="font-body-lg text-base md:text-lg text-on-surface-variant max-w-2xl px-4 text-justify">
               Kami menyediakan berbagai macam pembuatan karoseri dan layanan perbaikan untuk mendukung kelancaran bisnis Anda.
             </p>
           </div>
@@ -223,7 +223,7 @@ export default async function Home() {
                   </div>
                   <div className="p-6 md:p-7 flex flex-col flex-1 w-full">
                     <h3 className="font-headline-md font-semibold text-base md:text-2xl text-primary uppercase tracking-wide mb-3 leading-tight">{service.title}</h3>
-                    <p className="font-body-md text-base md:text-body text-on-surface-variant leading-relaxed mb-4 md:mb-6 flex-1">
+                    <p className="font-body-md text-base md:text-body text-on-surface-variant leading-relaxed mb-4 md:mb-6 flex-1 text-justify">
                       {service.desc}
                     </p>
                     <ul className="flex flex-col gap-2 mb-6">

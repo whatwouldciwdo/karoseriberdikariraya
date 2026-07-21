@@ -72,12 +72,12 @@ export default async function BlogDetail({ params }: Props) {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-btn font-label-md text-on-surface-variant mb-8">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
-            <ChevronRight size={14} />
-            <span className="text-primary truncate">{post.category}</span>
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-btn font-label-md text-on-surface-variant mb-8 min-w-0 max-w-full">
+            <Link href="/" className="hover:text-primary transition-colors shrink-0">Home</Link>
+            <ChevronRight size={14} className="shrink-0" />
+            <Link href="/blog" className="hover:text-primary transition-colors shrink-0">Blog</Link>
+            <ChevronRight size={14} className="shrink-0" />
+            <span className="text-primary break-words min-w-0">{post.category}</span>
           </div>
  
           {/* Title & Meta */}
@@ -85,7 +85,7 @@ export default async function BlogDetail({ params }: Props) {
             <span className="inline-block px-3 py-1 bg-primary/5 text-primary border border-outline-variant/25 rounded-full font-label-md text-btn uppercase tracking-wider mb-6">
               {post.category}
             </span>
-            <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.2] mb-8">
+            <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.2] mb-8 break-words">
               {post.title}
             </h1>
             
@@ -123,7 +123,7 @@ export default async function BlogDetail({ params }: Props) {
             prose-headings:font-headline-md prose-headings:text-primary prose-headings:font-normal
             prose-h2:text-heading prose-h2:mt-12 prose-h2:mb-6
             prose-h3:text-heading prose-h3:text-primary prose-h3:mt-8
-            prose-p:font-body-md prose-p:text-body prose-p:text-on-surface-variant prose-p:leading-relaxed prose-p:mb-6
+            prose-p:font-body-md prose-p:text-body prose-p:text-on-surface-variant prose-p:leading-relaxed prose-p:mb-6 prose-p:text-justify
             prose-a:text-primary hover:prose-a:text-secondary prose-a:transition-colors
             prose-strong:text-primary prose-strong:font-semibold
             prose-ul:list-disc prose-ul:pl-6 prose-ul:text-on-surface-variant prose-ul:mb-8

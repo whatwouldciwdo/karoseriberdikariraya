@@ -190,30 +190,30 @@ export default function InstalasiHydraulicSystemTruckPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-btn font-label-md text-on-surface-variant mb-6">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
-            <ChevronRight size={14} />
-            <span className="text-primary truncate">Instalasi Hydraulic System Truck</span>
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-btn font-label-md text-on-surface-variant mb-6 min-w-0 max-w-full">
+            <Link href="/" className="hover:text-primary transition-colors shrink-0">Home</Link>
+            <ChevronRight size={14} className="shrink-0" />
+            <Link href="/services" className="hover:text-primary transition-colors shrink-0">Services</Link>
+            <ChevronRight size={14} className="shrink-0" />
+            <span className="text-primary break-words min-w-0">Instalasi Hydraulic System Truck</span>
           </div>
-          <p className="font-label-md text-btn text-primary uppercase tracking-widest mb-4">
+          <p className="font-label-md text-xs sm:text-btn text-primary uppercase tracking-widest mb-4">
             Spesialis Hydraulic System Truck
           </p>
-          <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.1] mb-5">
+          <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.1] mb-5 break-words">
             Spesialis Instalasi Baru &amp; Service Hydraulic System untuk Fuel Truck, Lube Truck, dan Water Sprayer Truck
           </h1>
-          <p className="font-body-lg text-body text-on-surface-variant max-w-2xl leading-relaxed mb-8">
+          <p className="font-body-lg text-body text-on-surface-variant max-w-2xl leading-relaxed mb-8 text-justify">
             Solusi Hydraulic System yang andal untuk mendukung operasional Pertambangan, Kontraktor Alat Berat &amp; Konstruksi, serta Perkebunan. Kami melayani instalasi baru, perbaikan, troubleshooting, overhaul, hingga upgrade hydraulic system agar armada selalu siap beroperasi dengan aman, andal, dan minim downtime.
           </p>
-          <ul className="flex flex-wrap gap-3 mb-8">
+          <ul className="flex flex-wrap gap-2.5 sm:gap-3 mb-8">
             {highlights.map((h) => (
               <li
                 key={h}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-high/70 backdrop-blur-md border border-outline-variant/20 rounded-full font-label-md text-btn text-on-surface-variant"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 bg-surface-container-high/70 backdrop-blur-md border border-outline-variant/20 rounded-full font-label-md text-xs sm:text-btn text-on-surface-variant max-w-full min-w-0"
               >
                 <CheckCircle size={15} className="text-red-600 shrink-0" />
-                {h}
+                <span className="break-words">{h}</span>
               </li>
             ))}
           </ul>
@@ -232,10 +232,10 @@ export default function InstalasiHydraulicSystemTruckPage() {
               Dipercaya Berbagai Perusahaan untuk Mendukung Operasional Armada Industri
             </h2>
             <div className="w-20 h-1.5 bg-primary rounded-full mx-auto mb-8" />
-            <p className="font-body-lg text-on-surface-variant leading-relaxed mb-6">
+            <p className="font-body-lg text-on-surface-variant leading-relaxed mb-6 text-justify">
               Hydraulic system merupakan komponen penting yang menentukan kelancaran operasional kendaraan kerja. Kerusakan pada sistem hidrolik dapat menyebabkan armada berhenti beroperasi, menghambat produktivitas, serta meningkatkan biaya operasional.
             </p>
-            <p className="font-body-lg text-on-surface-variant leading-relaxed">
+            <p className="font-body-lg text-on-surface-variant leading-relaxed text-justify">
               BRS hadir sebagai mitra profesional yang menyediakan layanan instalasi dan service hydraulic system dengan standar pengerjaan yang mengutamakan kualitas, keselamatan, dan keandalan.
             </p>
           </div>

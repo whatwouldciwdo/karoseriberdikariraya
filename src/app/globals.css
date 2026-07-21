@@ -188,48 +188,53 @@ body {
 
 @utility font-headline-lg {
   font-family: var(--font-montserrat);
-  font-size: clamp(32px, 5vw, 40px);
+  font-size: clamp(24px, 5.5vw, 40px);
   line-height: 1.2;
   letter-spacing: -0.01em;
   font-weight: 700;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 @utility font-body-lg {
   font-family: var(--font-libre-franklin);
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 18px);
   line-height: 1.6;
   font-weight: 400;
 }
 
 @utility font-display-name-light {
   font-family: var(--font-montserrat);
-  font-size: clamp(32px, 5vw, 40px);
+  font-size: clamp(24px, 5.5vw, 40px);
   line-height: 1.2;
   letter-spacing: -0.02em;
   font-weight: 300;
+  overflow-wrap: anywhere;
 }
 
 @utility font-body-md {
   font-family: var(--font-libre-franklin);
-  font-size: 18px;
+  font-size: clamp(15px, 2vw, 18px);
   line-height: 1.6;
   font-weight: 400;
 }
 
 @utility font-display-name-heavy {
   font-family: var(--font-montserrat);
-  font-size: clamp(32px, 5vw, 40px);
+  font-size: clamp(24px, 5.5vw, 40px);
   line-height: 1.2;
   letter-spacing: -0.04em;
   font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 @utility font-headline-lg-mobile {
   font-family: var(--font-montserrat);
-  font-size: 32px;
+  font-size: clamp(24px, 6vw, 32px);
   line-height: 1.2;
   letter-spacing: -0.01em;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 @utility hide-scrollbar {

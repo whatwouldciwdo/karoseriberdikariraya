@@ -94,10 +94,10 @@ export default async function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative z-10 px-6 md:px-margin-desktop pb-16 md:pb-24 pt-32 max-w-5xl">
           <p className="font-label-md text-btn text-primary uppercase tracking-widest mb-4">Layanan Kami</p>
-          <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.1] mb-4">
+          <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.1] mb-4 break-words">
             Solusi Terintegrasi Karoseri Kendaraan Industri, Logistik, serta Distribusi Perusahaan
           </h1>
-          <p className="font-body-lg text-body text-on-surface-variant max-w-2xl leading-relaxed">
+          <p className="font-body-lg text-body text-on-surface-variant max-w-2xl leading-relaxed text-justify">
             Menyediakan solusi menyeluruh mulai dari konsultasi, perencanaan, pembuatan unit baru hingga perbaikan dan kustomisasi, kami hadir sebagai mitra terpercaya untuk semua kebutuhan kendaraan operasional bisnis.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default async function ServicesPage() {
                   <h2 className="font-headline-md font-semibold text-base md:text-2xl text-primary uppercase tracking-wide mb-3 leading-tight">
                     {service.title}
                   </h2>
-                  <p className="font-body-md text-base md:text-body text-on-surface-variant leading-relaxed mb-5 flex-1">
+                  <p className="font-body-md text-base md:text-body text-on-surface-variant leading-relaxed mb-5 flex-1 text-justify">
                     {service.desc}
                   </p>
 

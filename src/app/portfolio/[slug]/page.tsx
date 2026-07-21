@@ -109,19 +109,19 @@ export default async function PortfolioDetail({ params }: Props) {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-btn font-label-md text-on-surface-variant mb-8">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <Link href="/portfolio" className="hover:text-primary transition-colors">Portofolio</Link>
-            <ChevronRight size={14} />
-            <span className="text-primary truncate">{project.shortTitle}</span>
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-btn font-label-md text-on-surface-variant mb-8 min-w-0 max-w-full">
+            <Link href="/" className="hover:text-primary transition-colors shrink-0">Home</Link>
+            <ChevronRight size={14} className="shrink-0" />
+            <Link href="/portfolio" className="hover:text-primary transition-colors shrink-0">Portofolio</Link>
+            <ChevronRight size={14} className="shrink-0" />
+            <span className="text-primary break-words min-w-0">{project.shortTitle}</span>
           </div>
 
           <div className="mb-10">
             <span className="inline-block px-3 py-1 bg-primary/5 text-primary border border-outline-variant/25 rounded-full font-label-md text-btn uppercase tracking-wider mb-6">
               {project.category}
             </span>
-            <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.2] mb-8">
+            <h1 className="font-headline-lg text-heading text-primary tracking-tight leading-[1.2] mb-8 break-words">
               {project.title}
             </h1>
 
